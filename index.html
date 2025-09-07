@@ -2585,17 +2585,6 @@ await conversionContract.convertToBZeroX(amount);
 
             <div class="card">
                 <h2>🎯 Mining Strategy</h2>
-                <h3>Compensation Formula</h3>
-                <div class="code-block">
-if (multiplier < 4) return 1;
-return log2(multiplier/2) + 1;
-
-Examples:
-- multiplier = 8 → compensation = 3
-- multiplier = 16 → compensation = 4  
-- multiplier = 32 → compensation = 5
-                </div>
-
                 <h3>Optimal Mining Conditions</h3>
                 <ul class="feature-list">
                     <li>Mine when blocks are slow (> 10 minutes) for higher rewards</li>
@@ -2611,7 +2600,7 @@ Examples:
                     <span class="info-value">Additional ERC20 token rewards unlock</span>
                 </div>
                 <div class="info-item">
-                    <span class="info-label">NFT Eligibility:</span>
+                    <span class="info-label">NFT Eligibility (Very rarely possible):</span>
                     <span class="info-value">blocksToReadjust() == 1 + slow block conditions</span>
                 </div>
             </div>
