@@ -1895,7 +1895,7 @@ body {
                             </div>
                             <ol>
                                 <li>Right-click on <strong>1RunThisToMineB0xToken.sh</strong></li>
-                                <li>Select "Properties" → "Permissions"</li>
+                                <li>Select "Properties" <span style="font-size: 2em;">→</span> "Permissions"</li>
                                 <li>Enable "Allow executing file as program"</li>
                                 <li>Double-click the file and select "Run in terminal"</li>
                             </ol>
@@ -2058,7 +2058,7 @@ body {
             </div>
             <div class="info-item">
                 <span class="info-label">USDC Special:</span>
-                <span class="info-value">Tiered distribution: 1.25% → 3.75% over time</span>
+                <span class="info-value">Tiered distribution: 1.25% <span style="font-size: 2em;">→</span> 3.75% over time</span>
             </div>
         </div>
 
@@ -2304,7 +2304,7 @@ body {
                 
                 <h3>Supported Trading Pairs</h3>
                 <ul>
-                    <li>B0x ↔ 0xBitcoin</li>
+                    <li>B0x <span style="font-size: 2.5em;">↔</span> 0xBitcoin</li>
                 </ul>
 
                 <h3>How to Swap</h3>
@@ -2579,7 +2579,7 @@ body {
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h4>Select Conversion Type</h4>
-                        <p>Choose whether you want to convert <span class="highlight">(B0x + RightsTo0xBTC) → 0xBitcoin</span> or <span class="highlight">0xBitcoin → (B0x + RightsTo0xBTC)</span></p>
+                        <p>Choose whether you want to convert <span class="highlight">(B0x + RightsTo0xBTC) <span style="font-size: 2em;">→</span> 0xBitcoin</span> or <span class="highlight">0xBitcoin <span style="font-size: 2em;">→</span> (B0x + RightsTo0xBTC)</span></p>
                     </div>
                 </div>
 
@@ -2610,8 +2610,8 @@ body {
                 <div class="requirements-box">
                     <h3>Requirements</h3>
                     <ul>
-                        <li><strong>For B0x → 0xBitcoin:</strong> Hold RightsTo0xBitcoin and B0x Tokens</li>
-                        <li><strong>For 0xBitcoin → B0x:</strong> Hold 0xBitcoin tokens</li>
+                        <li><strong>For B0x <span style="font-size: 2em;">→</span> 0xBitcoin:</strong> Hold RightsTo0xBitcoin and B0x Tokens</li>
+                        <li><strong>For 0xBitcoin <span style="font-size: 2em;">→</span> B0x:</strong> Hold 0xBitcoin tokens</li>
                         <li><strong>Gas Fees:</strong> Have enough ETH to pay for transaction gas</li>
                     </ul>
                 </div>
@@ -2784,7 +2784,6 @@ await b0xContract.depositFromV1toV2(amount);</div>
                     <li>Staking your LP tokens for additional rewards</li>
                     <li>Monitoring your position performance regularly</li>
                     <li>Setting up alerts for significant price movements</li>
-                    <li>Planning your exit strategy based on your investment goals</li>
                 </ul>
             </div>
         </div>
@@ -3080,7 +3079,7 @@ await b0xContract.depositFromV1toV2(amount);</div>
         </div>
         <div class="info-item">
             <span class="info-label">Conversion Rate:</span>
-            <span class="info-value">1 0xBTC ↔ 1 B0x + 1 R0xBTC</span>
+            <span class="info-value">1 0xBTC <span style="font-size: 2.5em;">↔</span> 1 B0x + 1 R0xBTC</span>
         </div>
     </div>
 
@@ -3135,22 +3134,22 @@ await b0xContract.depositFromV1toV2(amount);</div>
         <div class="card">
             <h2>🔄 Conversion System</h2>
             <div class="economics-section">
-                <h3>Bidirectional 0xBitcoin ↔ B0x Conversion</h3>
+                <h3>Bidirectional 0xBitcoin <span style="font-size: 2.5em;">↔</span> B0x Conversion</h3>
                 <div class="supply-breakdown">
                     <div class="supply-item">
-                        <strong>Deposit (V1→V2)</strong><br>
-                        1 0xBTC → 1 B0x + 1 R0xBTC<br>
+                        <strong>Deposit (V1<span style="font-size: 2em;">→</span>V2)</strong><br>
+                        1 0xBTC <span style="font-size: 2em;">→</span> 1 B0x + 1 R0xBTC<br>
                         <em>depositFromV1toV2() function</em>
                     </div>
                     <div class="supply-item">
-                        <strong>Withdraw (V2→V1)</strong><br>
-                        1 B0x + 1 R0xBTC → 1 0xBTC<br>
+                        <strong>Withdraw (V2<span style="font-size: 2em;">→</span>V1)</strong><br>
+                        1 B0x + 1 R0xBTC <span style="font-size: 2em;">→</span> 1 0xBTC<br>
                         <em>withdrawFromV2toV1() function</em>
                     </div>
                     <div class="supply-item">
                         <strong>Approval-Free</strong><br>
                         receiveApproval() integration<br>
-                        <em>Direct 0xBTC → B0x conversion</em>
+                        <em>Direct 0xBTC <span style="font-size: 2em;">→</span> B0x + R0xBTC conversion</em>
                     </div>
                 </div>
             </div>
@@ -3252,7 +3251,7 @@ await b0xContract.depositFromV1toV2(amount);</div>
             <h2>🔧 Technical Architecture</h2>
             <ul class="feature-list">
                 <li><strong>ERC-20 Permit:</strong> Gasless approvals via signed messages</li>
-                <li><strong>Decimal Conversion:</strong> Auto-handles 8→18 decimal conversion</li>
+                <li><strong>Decimal Conversion:</strong> Auto-handles 8<span style="font-size: 2em;">→</span>18 decimal conversion</li>
                 <li><strong>Child Contract:</strong> Auto-deploys R0xBTC rights token</li>
                 <li><strong>Immutable References:</strong> 0xBTC and R0xBTC addresses locked</li>
                 <li><strong>Approval Integration:</strong> Works with 0xBTC's approveAndCall</li>
@@ -3381,7 +3380,7 @@ b0xContract.permit(owner, spender, value, deadline, v, r, s);
 <div class="content-page" id="rights-token-contract">
     <div class="content-header">
         <h1>🎫 RightsTo0xBitcoinToken Contract</h1>
-        <p>Rights Token for B0x ↔ 0xBitcoin Conversion System</p>
+        <p>Rights Token for B0x <span style="font-size: 2.5em;">↔</span> 0xBitcoin Conversion System</p>
     </div>
 
     <div class="launch-info">
@@ -3481,12 +3480,12 @@ b0xContract.permit(owner, spender, value, deadline, v, r, s);
                 <div class="supply-breakdown">
                     <div class="supply-item">
                         <strong>Receive R0xBTC</strong><br>
-                        When converting 0xBTC → B0x<br>
+                        When converting 0xBTC <span style="font-size: 2em;">→</span> B0x<br>
                         <em>1 0xBTC = 1 B0x + 1 R0xBTC</em>
                     </div>
                     <div class="supply-item">
                         <strong>Spend R0xBTC</strong><br>
-                        When converting B0x → 0xBTC<br>
+                        When converting B0x <span style="font-size: 2em;">→</span> 0xBTC<br>
                         <em>1 B0x + 1 R0xBTC = 1 0xBTC</em>
                     </div>
                     <div class="supply-item">
@@ -5040,7 +5039,7 @@ creator.createNewPool(b0xAddress, otherTokenAddress, deployedHook);
 
         <div class="content-page" id="conversion">
             <div class="content-header">
-                <h1 class="content-title">B0x ↔ 0xBitcoin Conversion</h1>
+                <h1 class="content-title">B0x <span style="font-size: 2.5em;">↔</span> 0xBitcoin Conversion</h1>
                 <p class="content-description">
                     Technical details of the conversion mechanism between B0x and 0xBitcoin tokens.
                 </p>
@@ -5848,7 +5847,7 @@ function updateSidebarHighlight(pageId) {
                 navHTML += `
                     <div class="nav-button previous" onclick="showPage('${prevPageId}')">
                         <div class="nav-label">
-                            <span class="nav-arrow">←</span>
+                            <span class="nav-arrow" style="font-size: 1.9em;">←</span>
                             Previous
                         </div>
                         <div class="nav-title">${prevTitle}</div>
@@ -5865,7 +5864,7 @@ function updateSidebarHighlight(pageId) {
                     <div class="nav-button next" onclick="showPage('${nextPageId}')">
                         <div class="nav-label">
                             Next
-                            <span class="nav-arrow">→</span>
+                            <span class="nav-arrow"  style="font-size: 1.9em;">→</span>
                         </div>
                         <div class="nav-title">${nextTitle}</div>
                     </div>
