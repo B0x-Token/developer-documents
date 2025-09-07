@@ -1271,6 +1271,95 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+        .prerequisites-box {
+            background: linear-gradient(135deg, #fef5e7, #fbb6ce);
+            color:black;
+            border: 2px solid #f6ad55;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .prerequisites-box h3 {
+            color: #c53030;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+
+
+
+
+                .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .rate-highlight {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .code-block2 {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .conversion-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            text-align: center;
+        }
+
+        .conversion-card h4 {
+            color: #0057ec;
+            margin-bottom: 10px;
+        }
+        .conversion-card h3{
+            color: #0057ec;
+            margin-bottom: 10px;
+        }
+        .conversion-card h2{
+            color: #0057ec;
+            margin-bottom: 10px;
+        }
+
+        .conversion-arrow {
+            font-size: 5rem;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
     </style>
 </head>
 <body>
@@ -1335,12 +1424,12 @@ body {
         <span class="expand-icon">▶</span>
     </button>
     <div class="nav-submenu">
-        <a class="nav-subitem" data-page="mine-b0x" onclick="showPage('mine-b0x')">How to mine B0x Token</a>
-        <a class="nav-subitem" data-page="how-to-stake" onclick="showPage('how-to-stake')">How to stake</a>
-        <a class="nav-subitem" data-page="how-to-swap" onclick="showPage('how-to-swap')">How to swap</a>
         <a class="nav-subitem" data-page="how-to-bridge" onclick="showPage('how-to-bridge')">How to bridge</a>
-        <a class="nav-subitem" data-page="how-to-convert" onclick="showPage('how-to-convert')">How to convert</a>
+        <a class="nav-subitem" data-page="mine-b0x" onclick="showPage('mine-b0x')">How to mine B0x Token</a>
+        <a class="nav-subitem" data-page="how-to-swap" onclick="showPage('how-to-swap')">How to swap</a>
         <a class="nav-subitem" data-page="create-position" onclick="showPage('create-position')">How to create position in dapp</a>
+        <a class="nav-subitem" data-page="how-to-stake" onclick="showPage('how-to-stake')">How to stake</a>
+        <a class="nav-subitem" data-page="how-to-convert" onclick="showPage('how-to-convert')">How to convert</a>
     </div>
 </div>
 
@@ -1652,6 +1741,11 @@ body {
                 </p>
             </div>
 
+            <div class="prerequisites-box">
+                    <h3>Prerequisites</h3>
+                    <p><strong>Sepolia Base Base ETH Required:</strong> You need Sepolia Base ETH to pay for gas fees.</p>
+                    <p>If you don't have any Sepolia Base ETH, go to <a href="#how-to-bridge" class="link" target="_blank">How to Bridge</a>.</p>
+            </div>
             <div class="content-section">
                 <h2 class="section-title">📋 Prerequisites</h2>
                 <div class="section-content">
@@ -2115,6 +2209,15 @@ body {
             </p>
         </div>
 
+            <div class="prerequisites-box">
+                    <h3>Prerequisites</h3>
+                    <p><strong>Sepolia Base ETH Required:</strong> You need Sepolia ETH to pay for gas fees and to bridge to Base Sepolia.</p>
+                    <p>If you don't have any Sepolia Base ETH, go to how to bridge <a href="#how-to-bridge" class="link" target="_blank">How to Bridge</a>.</p>
+                <p><strong>Uniswap v4 Position created in dapp:</strong> You need to create a Uniswap v4 Position in the dAPP..</p>
+                    <p>If you haven't created a position yet, follow the <a href="#create-position" class="link" target="_blank">Create Position Guide</a></p>
+                </div>
+
+
         <div class="content-section">
             <h2 class="section-title">Complete Staking Process</h2>
             <div class="section-content">
@@ -2189,6 +2292,14 @@ body {
                 Swap between B0x, 0xBitcoin, and other supported tokens using our integrated DEX.
             </p>
         </div>
+
+            <div class="prerequisites-box">
+                    <h3>Prerequisites</h3>
+                    <p><strong>Sepolia Base ETH Required:</strong> You need Sepolia ETH to pay for gas fees and to bridge to Base Sepolia.</p>
+                    <p>If you don't have any Sepolia Base ETH, go to how to bridge <a href="#how-to-bridge" class="link" target="_blank">How to Bridge</a>.</p>
+                <p><strong>Testnet B0x & Testnet 0xBitcoin Required:</strong> You need Testnet Tokens to use inside the dAPP..</p>
+                    <p>If you have no testnet tokens but have Sepolia Base ETH Go get Testnet Tokens here <a href="https://testnet.bzerox.org/?testnet-faucet" class="link" target="_blank">https://testnet.bzerox.org/?testnet-faucet</a></p>
+                </div>
 
         <div class="content-section">
             <h2 class="section-title">Swap Interface</h2>
@@ -2271,129 +2382,422 @@ body {
     </div>
 	
 	
-        <div class="content-page" id="how-to-bridge">
-            <div class="content-header">
-                <h1 class="content-title">How to Bridge</h1>
-                <p class="content-description">
-                    Bridge tokens between different networks using our cross-chain infrastructure.
-                </p>
-            </div>
-
-            <div class="content-section">
-                <h2 class="section-title">Supported Networks</h2>
-                <div class="section-content">
-                    <ul>
-                        <li><span class="network-badge">Ethereum Sepolia</span> Sepolia Ethereum Mainnet</li>
-                        <li><span class="network-badge">Base Sepolia</span> Base Sepolia Network</li>
-                    </ul>
-
-                    <h3>Bridging Process</h3>
-                    <p>1. <strong>Select Networks:</strong> Choose source and destination chains</p>
-                    <p>2. <strong>Choose Token:</strong> Select B0x or 0xBitcoin to bridge</p>
-                    <p>3. <strong>Enter Amount:</strong> Specify amount to bridge</p>
-                    <p>4. <strong>Confirm Bridge:</strong> Sign transaction and wait for confirmation</p>
-
-                    <h3>Bridge Fees</h3>
-                    <ul>
-                        <li>Ethereum → L2: 0.0% + gas</li>
-                        <li>L2 → Ethereum: 0.0% + gas</li>
-                        <li>L2 → L2: 0.00% + gas</li>
-                    </ul>
-
-                    <h3>Bridge Time</h3>
-                    <ul>
-                        <li>To L2 networks: ~10 minutes</li>
-                        <li>From L2 to Ethereum: ~7 days (challenge period)</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="content-page" id="how-to-bridge">
+        <div class="content-header">
+            <h1 class="content-title">How to Bridge</h1>
+            <p class="content-description">
+                Bridge tokens between different networks using our cross-chain infrastructure.
+            </p>
         </div>
 
-        <div class="content-page" id="how-to-convert">
-            <div class="content-header">
-                <h1 class="content-title">How to Convert</h1>
-                <p class="content-description">
-                    Convert between B0x and 0xBitcoin tokens using our conversion mechanism.
-                </p>
-            </div>
+        <div class="content-section">
+            <h2 class="section-title">Bridge Interface</h2>
+            <div class="section-content">
+                
+                <div class="prerequisites-box">
+                    <h3>Prerequisites</h3>
+                    <p><strong>Sepolia ETH Required:</strong> You need Sepolia ETH to pay for gas fees and to bridge to Base Sepolia.</p>
+                    <p>If you don't have any Sepolia ETH, get some from the <a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia" class="link" target="_blank">Google Sepolia ETH Faucet</a>.</p>
+                </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Conversion Mechanism</h2>
-                <div class="section-content">
-                    <p>
-                        B Zero X provides a seamless conversion mechanism between B0x and 0xBitcoin tokens 
-                        at a fixed exchange rate, enabling interoperability between the ecosystems.
-                    </p>
+                <h3>Quick Bridge Process</h3>
+                <p>Visit the bridge page at <a href="https://testnets.superbridge.app/?fromChainId=11155111&toChainId=84532" class="link" target="_blank">https://testnets.superbridge.app/?fromChainId=11155111&toChainId=84532</a> to transfer Ethereum across networks.</p>
+                
+                <h3>Supported Networks</h3>
+                <ul>
+                    <li><span class="network-badge">Ethereum Sepolia</span> Sepolia Ethereum Mainnet</li>
+                    <li><span class="network-badge">Base Sepolia</span> Base Sepolia Network</li>
+                </ul>
 
-                    <h3>Conversion Rate</h3>
-                    <p><strong>1 B0x + 1 RightsTo0xBitcoin Token = 1 0xBitcoin</strong> (1:1 ratio)</p>
+                <h3>Supported Tokens</h3>
+                <ul>
+                    <li>Sepolia Ethereum</li>
+                </ul>
 
-                    <h3>Conversion Process</h3>
-                    <div class="code-block2">
-// Convert B0x to 0xBitcoin
-await b0xContract.withdrawFromV2toV1(amountOf0xBTC);
-
-// Convert 0xBitcoin to B0x
-await b0xContract.depositFromV1toV2(amount);
+                <h3>How to Bridge</h3>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Visit the Bridge</h4>
+                        <p>Go to <a href="https://testnets.superbridge.app/?fromChainId=11155111&toChainId=84532" class="link" target="_blank">https://testnets.superbridge.app/?fromChainId=11155111&toChainId=84532</a></p>
                     </div>
+                </div>
 
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Connect Your Wallet</h4>
+                        <p>Connect your wallet using <span class="highlight">Rabby</span>, <span class="highlight">Metamask</span>, or <span class="highlight">WalletConnect</span> to the Superbridge interface.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Verify Networks</h4>
+                        <p>Ensure you're bridging from <span class="highlight">Ethereum Sepolia</span> to <span class="highlight">Base Sepolia</span> (or vice versa)</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Select Networks</h4>
+                        <p>Choose source and destination chains from the network dropdown menus. Should be Sepolia ETH to Base Sepolia ETH</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Choose Token</h4>
+                        <p>Select Ethereum from the token dropdown menu</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Enter Amount</h4>
+                        <p>Specify the amount you want to bridge across networks</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h4>Review Details</h4>
+                        <p>Check the bridge route, fees, and estimated completion time</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h4>Confirm Bridge</h4>
+                        <p>Sign and submit the bridge transaction through your wallet and wait for confirmation</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h4>Use the dAPP</h4>
+                        <p>Now you can use the Base Sepolia dAPP! Get Testnet Tokens @ <a href="https://testnet.bzerox.org/?tesnet-faucet" class="link" target="_blank">https://testnet.bzerox.org/?tesnet-faucet</a>
+                            and then create a position using <a href="https://dev.testnet.bzerox.org/#create-position" class="link" target="_blank">https://dev.testnet.bzerox.org/#create-position</a></p>
+                    </div>
+                </div>
+
+                <h3>Bridge Fees</h3>
+                <div class="fee-highlight">0% Bridge Fees</div>
+                <p>No additional fees are charged for bridging tokens between supported networks.</p>
+
+                <h3>Bridge Times</h3>
+                <div class="time-grid">
+                    <div class="time-card">
+                        <strong>To L2 Networks (Base)</strong>
+                        ~10 minutes
+                    </div>
+                    <div class="time-card">
+                        <strong>From L2 to Ethereum</strong>
+                        ~7 days (challenge period)
+                    </div>
+                </div>
+
+                <h3>Important Notes</h3>
+                <ul>
+                    <li><strong>Network Security:</strong> Ensure you're connected to the correct network before bridging</li>
+                    <li><strong>Transaction Finality:</strong> Wait for full confirmation before switching networks</li>
+                    <li><strong>Gas Costs:</strong> You'll need native tokens (ETH) on both networks for gas fees</li>
+                    <li><strong>Challenge Period:</strong> L2 to L1 bridges require a 7-day waiting period for security</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="content-page" id="how-to-convert">
+        <div class="content-header">
+            <h1 class="content-title">How to Convert</h1>
+            <p class="content-description">
+                Convert between B0x and 0xBitcoin tokens using our conversion mechanism.
+            </p>
+        </div>
+            <div class="prerequisites-box">
+                    <h3>Prerequisites</h3>
+                    <p><strong>Sepolia Base ETH Required:</strong> You need Sepolia ETH to pay for gas fees and to bridge to Base Sepolia.</p>
+                    <p>If you don't have any Sepolia Base ETH, go to how to bridge <a href="#how-to-bridge" class="link" target="_blank">How to Bridge</a>.</p>
+                <p><strong>Testnet B0x & Testnet 0xBitcoin Required:</strong> You need Testnet Tokens to use inside the dAPP..</p>
+                    <p>If you have no testnet tokens but have Sepolia Base ETH Go get Testnet Tokens here <a href="https://testnet.bzerox.org/?testnet-faucet" class="link" target="_blank">https://testnet.bzerox.org/?testnet-faucet</a></p>
+                </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Conversion Mechanism</h2>
+            <div class="section-content">
+                <p>
+                    B Zero X provides a seamless conversion mechanism between B0x and 0xBitcoin tokens 
+                    at a fixed exchange rate, enabling interoperability between the ecosystems.
+                </p>
+
+                <h3>Conversion Rate</h3>
+                <div class="rate-highlight">1 B0x + 1 RightsTo0xBitcoin Token = 1 0xBitcoin</div>
+                <p>Fixed 1:1 ratio ensures fair and predictable conversions between tokens.</p>
+
+                <h3>Conversion Types</h3>
+                <div class="conversion-grid">
+                    <div class="conversion-card">
+                        <h2>1 B0x + 1 RightsTo0xBTC</h2>
+                        <div class="conversion-arrow">↓</div>
+                        <h3>1 0xBitcoin</h3>
+                    </div>
+                    <div class="conversion-card">
+                        <h2>1 0xBitcoin</h2>
+                        <div class="conversion-arrow">↓</div>
+                        <h3>1 B0x + 1 RightsTo0xBTC</h3>
+                    </div>
+                </div>
+
+                <h3>How to Convert</h3>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Visit the dApp</h4>
+                        <p>Go to <a href="https://testnet.bzerox.org" class="link" target="_blank">https://testnet.bzerox.org</a></p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Connect Your Wallet</h4>
+                        <p>Connect your wallet using <span class="highlight">Rabby</span>, <span class="highlight">Metamask</span>, or <span class="highlight">WalletConnect</span> to the dApp.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Navigate to Convert</h4>
+                        <p>Find the Convert Tab in the dApp. Go to <a href="https://testnet.bzerox.org/?convert" class="link" target="_blank">https://testnet.bzerox.org/?convert</a></p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Select Conversion Type</h4>
+                        <p>Choose whether you want to convert <span class="highlight">(B0x + RightsTo0xBTC) → 0xBitcoin</span> or <span class="highlight">0xBitcoin → (B0x + RightsTo0xBTC)</span></p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Enter Amount</h4>
+                        <p>Specify the amount you want to convert (remember the 1:1 ratio)</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Review Transaction</h4>
+                        <p>Check the conversion details, gas fees, and confirm you have the required tokens</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h4>Execute Conversion</h4>
+                        <p>Sign and submit the conversion transaction through your wallet</p>
+                    </div>
+                </div>
+
+                <div class="requirements-box">
                     <h3>Requirements</h3>
                     <ul>
-                        <li>Hold RightsTo0xBitcoin and B0x Tokens or 0xBitcoin tokens</li>
-                        <li>Pay gas fees for transaction</li>
-                    </ul>
-
-                    <h3>Use Cases</h3>
-                    <ul>
-                        <li>Access 0xBitcoin ecosystem features</li>
-                        <li>Participate in B Zero X ecosystem</li>
-                        <li>Arbitrage opportunities</li>
-                        <li>Portfolio diversification</li>
+                        <li><strong>For B0x → 0xBitcoin:</strong> Hold RightsTo0xBitcoin and B0x Tokens</li>
+                        <li><strong>For 0xBitcoin → B0x:</strong> Hold 0xBitcoin tokens</li>
+                        <li><strong>Gas Fees:</strong> Have enough ETH to pay for transaction gas</li>
                     </ul>
                 </div>
+
+                <h3>Technical Implementation</h3>
+                <div class="code-block2">// Convert (RightsTo0xBitcoin + B0x) to 0xBitcoin
+await b0xContract.withdrawFromV2toV1(amountOf0xBTC);
+
+// Convert 0xBitcoin to (RightsTo0xBitcoin + B0x)
+await b0xContract.depositFromV1toV2(amount);</div>
+
+                <h3>Use Cases</h3>
+                <ul>
+                    <li><strong>Ecosystem Access:</strong> Access 0xBitcoin ecosystem features and services</li>
+                    <li><strong>Platform Participation:</strong> Participate in B Zero X ecosystem activities</li>
+                    <li><strong>Arbitrage Opportunities:</strong> Take advantage of price differences across platforms</li>
+                    <li><strong>Portfolio Management:</strong> Diversify and rebalance your token holdings</li>
+                    <li><strong>Staking Flexibility:</strong> Convert tokens based on staking opportunities</li>
+                </ul>
+
+                <h3>Important Notes</h3>
+                <ul>
+                    <li><strong>Fixed Rate:</strong> Conversion rate is always 1:1, no slippage concerns</li>
+                    <li><strong>Instant Conversion:</strong> Conversions are processed immediately upon confirmation</li>
+                    <li><strong>No Fees:</strong> Only gas fees apply, no additional conversion fees</li>
+                    <li><strong>Reversible:</strong> Conversions can be done in both directions as needed</li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <div class="content-page" id="create-position">
-            <div class="content-header">
-                <h1 class="content-title">How to Create Position in dApp</h1>
-                <p class="content-description">
-                    Create and manage liquidity positions in the B Zero X decentralized application.
-                </p>
-            </div>
+      <div class="content-page" id="create-position">
+        <div class="content-header">
+            <h1 class="content-title">How to Create Position in dApp</h1>
+            <p class="content-description">
+                Create and manage liquidity positions in the B Zero X decentralized application.
+            </p>
+        </div>
+            <div class="prerequisites-box">
+                    <h3>Prerequisites</h3>
+                    <p><strong>Sepolia Base ETH Required:</strong> You need Sepolia ETH to pay for gas fees and to bridge to Base Sepolia.</p>
+                    <p>If you don't have any Sepolia Base ETH, go to how to bridge <a href="#how-to-bridge" class="link" target="_blank">How to Bridge</a>.</p>
+                <p><strong>Testnet B0x & Testnet 0xBitcoin Required:</strong> You need Testnet Tokens to use inside the dAPP..</p>
+                    <p>If you have no testnet tokens but have Sepolia Base ETH Go get Testnet Tokens here <a href="https://testnet.bzerox.org/?testnet-faucet" class="link" target="_blank">https://testnet.bzerox.org/?testnet-faucet</a></p>
+                </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Position Management</h2>
-                <div class="section-content">
-                    <h3>Creating a New Position</h3>
-                    <p>1. <strong>Navigate to Positions:</strong> Go to the "Create Position" tab in the dApp</p>
-                    <p>2. <strong>Select Pool:</strong> Choose your desired liquidity pool</p>
-					
-                    <p>3. <strong>Approve Tokens for Liquidity:</strong> Approve Deposit tokens to create the position</p>
-                    <p>4. <strong>Add Liquidity:</strong> Deposit tokens to create the position</p>
 
-                    <h3>Position Types</h3>
+        <div class="content-section">
+            <h2 class="section-title">Position Management</h2>
+            <div class="section-content">
+                
+                <h3>Quick Position Creation</h3>
+                <p>Visit the position creation page at <a href="https://testnet.bzerox.org/?create" class="link" target="_blank">https://testnet.bzerox.org/?create</a> to create your liquidity position.</p>
+                
+                <h3>Available Pool</h3>
+                <div class="pool-highlight">0xBTC/B0x Liquidity Pool</div>
+                <p>Currently supporting the main trading pair between 0xBitcoin and B0x tokens.</p>
+
+                <h3>How to Create a Position</h3>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Visit the dApp and click the Create Position Tab or follow this direct link</h4>
+                        <p>Go to <a href="https://testnet.bzerox.org/?create" class="link" target="_blank">https://testnet.bzerox.org/?create</a></p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Connect Your Wallet</h4>
+                        <p>Connect your wallet using <span class="highlight">Rabby</span>, <span class="highlight">Metamask</span>, or <span class="highlight">WalletConnect</span> to the dApp.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Navigate to Create Position</h4>
+                        <p>Go to the "Create Position" tab in the dApp at <a href="https://testnet.bzerox.org/?create" class="link" target="_blank">https://testnet.bzerox.org/?create</a></p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Select Pool</h4>
+                        <p>Choose your desired liquidity pool: <span class="highlight">0xBTC/B0x</span></p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Select Token Amounts</h4>
+                        <p>Select the amount of tokens you wish to supply to the liquidity pool (both 0xBTC and B0x)</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Approve Tokens</h4>
+                        <p>Approve deposit tokens for the liquidity pool contract to access your tokens</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h4>Add Liquidity</h4>
+                        <p>Deposit tokens to create your position and receive LP tokens representing your share</p>
+                    </div>
+                </div>
+
+                <h3>Position Types</h3>
+                <div class="position-type-card">
+                    <h4>Full Range Position</h4>
+                    <p><strong>Provide liquidity across all prices</strong></p>
+                    <p>This is the only position type our Staking Contract currently allows. Your liquidity will be active across the entire price range.</p>
+                </div>
+
+                <h3>Managing Your Positions</h3>
+                <ul>
+                    <li><strong>Increase Liquidity:</strong> Add more tokens to increase your position size and potential rewards</li>
+                    <li><strong>Decrease Liquidity:</strong> Partially or fully exit your position to collect fees and principal</li>
+                    <li><strong>Collect Fees:</strong> Harvest trading fees earned from your liquidity provision</li>
+                    <li><strong>Monitor Performance:</strong> Track your position's performance and impermanent loss</li>
+                </ul>
+
+                <h3>Position Analytics</h3>
+                <p>Track your position performance with these tools:</p>
+                <div class="analytics-grid">
+                    <div class="analytics-item">
+                        <strong>Uniswap Analytics</strong>
+                        Position metrics and performance
+                    </div>
+                    <div class="analytics-item">
+                        <strong>Stats Site</strong>
+                        Detailed statistics and charts
+                    </div>
+                    <div class="analytics-item">
+                        <strong>Historical Charts</strong>
+                        Performance over time
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h3>Important Considerations</h3>
                     <ul>
-                        <li><strong>Full Range:</strong> Provide liquidity across all prices, the only thing our Staking Contract Allows.</li>
-                    </ul>
-
-                    <h3>Managing Positions</h3>
-                    <ul>
-                        <li><strong>Add Liquidity:</strong> Increase position size</li>
-                        <li><strong>Remove Liquidity:</strong> Partially or fully exit position or collect fees</li>
-                    </ul>
-
-                    <h3>Position Analytics</h3>
-                    <p>Track your position performance with:</p>
-                    <ul>
-                        <li>Uniswap Analytics</li>
-                        <li>Stats Site</li>
-                        <li>Historical performance charts</li>
+                        <li><strong>Impermanent Loss:</strong> Providing liquidity may result in impermanent loss if token prices diverge significantly</li>
+                        <li><strong>Token Requirements:</strong> You need both 0xBTC and B0x tokens to create a position</li>
+                        <li><strong>Gas Fees:</strong> Multiple transactions are required (approvals + deposit), each requiring gas fees</li>
+                        <li><strong>Market Risk:</strong> LP tokens are subject to market volatility of the underlying assets</li>
                     </ul>
                 </div>
+
+                <h3>Benefits of Providing Liquidity</h3>
+                <ul>
+                    <li><strong>Trading Fees:</strong> Earn a portion of trading fees from the pool</li>
+                    <li><strong>Staking Rewards:</strong> Stake your LP tokens for additional rewards</li>
+                    <li><strong>Protocol Support:</strong> Help improve liquidity and reduce slippage for all users</li>
+                    <li><strong>Passive Income:</strong> Generate yield on your token holdings</li>
+                </ul>
+
+                <h3>Next Steps</h3>
+                <p>After creating your position, consider:</p>
+                <ul>
+                    <li>Staking your LP tokens for additional rewards</li>
+                    <li>Monitoring your position performance regularly</li>
+                    <li>Setting up alerts for significant price movements</li>
+                    <li>Planning your exit strategy based on your investment goals</li>
+                </ul>
             </div>
         </div>
-
+    </div>
         <!-- All Contract Reference Pages -->
         <div class="content-page" id="b0x-mining-pow">
             <div class="content-header">
