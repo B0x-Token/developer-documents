@@ -18,7 +18,7 @@ body {
     height: 100vh;
 }
 
-/* Header */
+/* Header stays fixed */
 .header {
     position: fixed;
     top: 0;
@@ -917,7 +917,52 @@ body {
         margin-bottom: 30px;
     }
 }
-		
+
+
+
+
+/* Search wrapper for relative positioning */
+.search-wrapper {
+    position: relative; /* dropdown positioned relative to this */
+}
+
+/* Search box style */
+.search-box {
+    background: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #e0e0e0;
+    width: 300px;
+}
+
+/* Dropdown results */
+.search-results {
+    position: absolute; /* floats below the input */
+    top: 100%;          /* directly under the search box */
+    left: 0;
+    width: 100%;        /* match input width */
+    border: 1px solid #4a4a4a;
+    border-radius: 6px;
+    background: #2e2e2e;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1001;      /* above header content */
+}
+
+/* Individual search items */
+.search-result-item {
+    display: block;
+    padding: 4px 8px;
+    color: #00bfff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.search-result-item:hover {
+    background: #444;
+}
+
 		
     </style>
 </head>
@@ -925,13 +970,18 @@ body {
     <!-- Header -->
     <div class="header">
         <div style="display: flex; align-items: center; gap: 16px;">
-            <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
-            <div class="logo">
-                <div class="logo-icon">Bx</div>
-                B Zero X
-            </div>
+        <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="logo">
+            <div class="logo-icon">Bx</div>
+            B Zero X
         </div>
+    </div>
+
+    <!-- Search wrapper -->
+    <div class="search-wrapper">
         <input type="text" class="search-box" placeholder="Search documentation..." />
+        <div class="search-results"></div>
+    </div>
     </div>
 
     <!-- Overlay for mobile -->
@@ -940,69 +990,70 @@ body {
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
         <div class="nav-item">
-            <button class="nav-header" onclick="showPage('what-is-bzero-x')">
-                What is B Zero X?
-            </button>
-        </div>
+    <button class="nav-header" data-page="what-is-bzero-x" onclick="showPage('what-is-bzero-x')">
+        What is B Zero X?
+    </button>
+</div>
 
-        <div class="nav-item">
-            <button class="nav-header" onclick="toggleSubmenu(this)">
-                Protocol Design
-                <span class="expand-icon">▶</span>
-            </button>
-            <div class="nav-submenu">
-                <a class="nav-subitem" onclick="showPage('proof-of-work')">Proof of Work Contract</a>
-                <a class="nav-subitem" onclick="showPage('uniswap-v4-staking')">Uniswap v4 Staking Pool</a>
-                <a class="nav-subitem" onclick="showPage('hook-address')">Hook Address</a>
-                <a class="nav-subitem" onclick="showPage('hook-miner')">Hook Miner</a>
-                <a class="nav-subitem" onclick="showPage('conversion')">B0x ↔ 0xBitcoin Conversion</a>
-                <a class="nav-subitem" onclick="showPage('rights-token')">RightsTo0xBitcoin Token</a>
-                <a class="nav-subitem" onclick="showPage('oxbitcoin-token')">0xBitcoin Token</a>
-            </div>
-        </div>
+<div class="nav-item">
+    <button class="nav-header" onclick="toggleSubmenu(this)">
+        Protocol Design
+        <span class="expand-icon">▶</span>
+    </button>
+    <div class="nav-submenu">
+        <a class="nav-subitem" data-page="proof-of-work" onclick="showPage('proof-of-work')">Proof of Work Contract</a>
+        <a class="nav-subitem" data-page="uniswap-v4-staking" onclick="showPage('uniswap-v4-staking')">Uniswap v4 Staking Pool</a>
+        <a class="nav-subitem" data-page="hook-address" onclick="showPage('hook-address')">Hook Address</a>
+        <a class="nav-subitem" data-page="hook-miner" onclick="showPage('hook-miner')">Hook Miner</a>
+        <a class="nav-subitem" data-page="conversion" onclick="showPage('conversion')">B0x ↔ 0xBitcoin Conversion</a>
+        <a class="nav-subitem" data-page="rights-token" onclick="showPage('rights-token')">RightsTo0xBitcoin Token</a>
+        <a class="nav-subitem" data-page="oxbitcoin-token" onclick="showPage('oxbitcoin-token')">0xBitcoin Token</a>
+    </div>
+</div>
 
-        <div class="nav-item">
-            <button class="nav-header" onclick="toggleSubmenu(this)">
-                Deployments
-                <span class="expand-icon">▶</span>
-            </button>
-            <div class="nav-submenu">
-                <a class="nav-subitem" onclick="showPage('mainnet')">Mainnet</a>
-                <a class="nav-subitem" onclick="showPage('testnet')">Testnet</a>
-            </div>
-        </div>
+<div class="nav-item">
+    <button class="nav-header" onclick="toggleSubmenu(this)">
+        Deployments
+        <span class="expand-icon">▶</span>
+    </button>
+    <div class="nav-submenu">
+        <a class="nav-subitem" data-page="mainnet" onclick="showPage('mainnet')">Mainnet</a>
+        <a class="nav-subitem" data-page="testnet" onclick="showPage('testnet')">Testnet</a>
+    </div>
+</div>
 
-        <div class="nav-item">
-            <button class="nav-header" onclick="toggleSubmenu(this)">
-                Guides
-                <span class="expand-icon">▶</span>
-            </button>
-            <div class="nav-submenu">
-                <a class="nav-subitem" onclick="showPage('mine-b0x')">How to mine B0x Token</a>
-                <a class="nav-subitem" onclick="showPage('how-to-stake')">How to stake</a>
-                <a class="nav-subitem" onclick="showPage('how-to-swap')">How to swap</a>
-                <a class="nav-subitem" onclick="showPage('how-to-bridge')">How to bridge</a>
-                <a class="nav-subitem" onclick="showPage('how-to-convert')">How to convert</a>
-                <a class="nav-subitem" onclick="showPage('create-position')">How to create position in dapp</a>
-            </div>
-        </div>
+<div class="nav-item">
+    <button class="nav-header" onclick="toggleSubmenu(this)">
+        Guides
+        <span class="expand-icon">▶</span>
+    </button>
+    <div class="nav-submenu">
+        <a class="nav-subitem" data-page="mine-b0x" onclick="showPage('mine-b0x')">How to mine B0x Token</a>
+        <a class="nav-subitem" data-page="how-to-stake" onclick="showPage('how-to-stake')">How to stake</a>
+        <a class="nav-subitem" data-page="how-to-swap" onclick="showPage('how-to-swap')">How to swap</a>
+        <a class="nav-subitem" data-page="how-to-bridge" onclick="showPage('how-to-bridge')">How to bridge</a>
+        <a class="nav-subitem" data-page="how-to-convert" onclick="showPage('how-to-convert')">How to convert</a>
+        <a class="nav-subitem" data-page="create-position" onclick="showPage('create-position')">How to create position in dapp</a>
+    </div>
+</div>
 
-        <div class="nav-item">
-            <button class="nav-header" onclick="toggleSubmenu(this)">
-                Contract Reference
-                <span class="expand-icon">▶</span>
-            </button>
-            <div class="nav-submenu">
-                <a class="nav-subitem" onclick="showPage('b0x-lp-rewards')">B0x_LP_Rewards</a>
-                <a class="nav-subitem" onclick="showPage('b0x-mining-pow')">B0x_Mining_Proof_of_Work</a>
-                <a class="nav-subitem" onclick="showPage('b0x-mainnet')">B0x_Mainnet</a>
-                <a class="nav-subitem" onclick="showPage('rights-token-contract')">RightsTo0xBitcoinToken</a>
-                <a class="nav-subitem" onclick="showPage('position-finder')">positionFinderPro</a>
-                <a class="nav-subitem" onclick="showPage('univ4-hook')">UniV4Hook</a>
-                <a class="nav-subitem" onclick="showPage('hook-miner-contract')">HookMiner</a>
-                <a class="nav-subitem" onclick="showPage('pool-creator')">UniswapV4PoolCreator</a>
-            </div>
-        </div>
+<div class="nav-item">
+    <button class="nav-header" onclick="toggleSubmenu(this)">
+        Contract Reference
+        <span class="expand-icon">▶</span>
+    </button>
+    <div class="nav-submenu">
+        <a class="nav-subitem" data-page="b0x-lp-rewards" onclick="showPage('b0x-lp-rewards')">B0x_LP_Rewards</a>
+        <a class="nav-subitem" data-page="b0x-mining-pow" onclick="showPage('b0x-mining-pow')">B0x_Mining_Proof_of_Work</a>
+        <a class="nav-subitem" data-page="b0x-mainnet" onclick="showPage('b0x-mainnet')">B0x_Mainnet</a>
+        <a class="nav-subitem" data-page="rights-token-contract" onclick="showPage('rights-token-contract')">RightsTo0xBitcoinToken</a>
+        <a class="nav-subitem" data-page="position-finder" onclick="showPage('position-finder')">positionFinderPro</a>
+        <a class="nav-subitem" data-page="univ4-hook" onclick="showPage('univ4-hook')">UniV4Hook</a>
+        <a class="nav-subitem" data-page="hook-miner-contract" onclick="showPage('hook-miner-contract')">HookMiner</a>
+        <a class="nav-subitem" data-page="pool-creator" onclick="showPage('pool-creator')">UniswapV4PoolCreator</a>
+    </div>
+</div>
+
     </nav>
 
     <!-- Main Content -->
@@ -1132,7 +1183,8 @@ body {
                         <li><strong>Algorithm:</strong> Keccak256-based hash function</li>
                         <li><strong>Block Time:</strong> ~10 minutes average</li>
                         <li><strong>Difficulty Adjustment:</strong> Every 2016 epochs or  14 days + 1 mint or 256 mints and 7 days + 1 mint</li>
-                        <li><strong>Max Supply:</strong> 32,500,000 B0x tokens</li>
+                        <li><strong>Max Supply of B0x:</strong> 32,500,000 B0x tokens</li>
+                        <li><strong>Max Mined Supply (0xBTC + B0x Mining):</strong> 21,000,000 B0x tokens</li>
                         <li><strong>Halving:</strong> Every 210,000 Epochs</li>
                     </ul>
 
@@ -1232,6 +1284,13 @@ body {
         <div class="contract-description">Router on Base Sepolia Testnet</div>
         <div class="contract-address">0xc728AF6267315b5CB7669D7DC4F87f5174adabE8</div>
         <a href="https://sepolia.basescan.org/address/0xc728AF6267315b5CB7669D7DC4F87f5174adabE8" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">Position Finder Pro</div>
+        <div class="contract-description">Finds Uniswap and Staking Positions</div>
+        <div class="contract-address">0x3418c003F43FbA5Ce8f69041a49EF7cb4d1d6a58</div>
+        <a href="https://sepolia.basescan.org/address/0x3418c003F43FbA5Ce8f69041a49EF7cb4d1d6a58" target="_blank" class="link">🔍 View on BaseScan</a>
       </div>
 
       <div class="contract-card">
@@ -2054,8 +2113,12 @@ await conversionContract.convertToBZeroX(amount);
                 <h2>⚡ Mining Parameters</h2>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-value">50</div>
-                        <div class="stat-label">Initial Block Reward (B0x)</div>
+                        <div class="stat-value">25</div>
+                        <div class="stat-label">Initial Max Block Reward</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">6.25</div>
+                        <div class="stat-label">Initial Min Block Reward</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value">600</div>
@@ -2067,7 +2130,7 @@ await conversionContract.convertToBZeroX(amount);
                     </div>
                     <div class="stat-card">
                         <div class="stat-value">21M</div>
-                        <div class="stat-label">Maximum Supply</div>
+                        <div class="stat-label">Maximum Mined Supply (0xBTC + B0x)</div>
                     </div>
                 </div>
                 
@@ -3723,8 +3786,8 @@ let currentPage = 'what-is-bzero-x';
         // Define page order for navigation
         const pageOrder = [
             'what-is-bzero-x',
-            'uniswap-v4-staking',
             'proof-of-work',
+            'uniswap-v4-staking',
             'hook-address',
             'hook-miner',
             'conversion',
@@ -3750,8 +3813,8 @@ let currentPage = 'what-is-bzero-x';
 
         const pageTitles = {
             'what-is-bzero-x': 'What is B Zero X?',
-            'uniswap-v4-staking': 'Uniswap v4 Staking Pool',
             'proof-of-work': 'Proof of Work Contract',
+            'uniswap-v4-staking': 'Uniswap v4 Staking Pool',
             'hook-address': 'Hook Address',
             'hook-miner': 'Hook Miner',
             'conversion': 'B0x ↔ 0xBitcoin Conversion',
@@ -3774,38 +3837,37 @@ let currentPage = 'what-is-bzero-x';
             'hook-miner-contract': 'HookMiner',
             'pool-creator': 'UniswapV4PoolCreator'
         };
+function updateSidebarHighlight(pageId) {
+    // Remove all active states
+    document.querySelectorAll('.nav-subitem, .nav-header').forEach(item => {
+        item.classList.remove('active', 'expanded');
+    });
 
-        function updateSidebarHighlight(pageId) {
-            // Remove all active states
-            document.querySelectorAll('.nav-subitem, .nav-header').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Find the nav item for this page and activate it
-const navItems = document.querySelectorAll(
-  `.nav-subitem[onclick="openPage('${pageId}')"], 
-   .nav-header[onclick="openPage('${pageId}')"]`
-);
-            navItems.forEach(item => {
-                item.classList.add('active');
-                
-                // If it's a subitem, also expand its parent menu
-                if (item.classList.contains('nav-subitem')) {
-                    const parentSubmenu = item.parentElement;
-                    const parentHeader = parentSubmenu.previousElementSibling;
-                    
-                    if (parentSubmenu && parentHeader) {
-                        parentSubmenu.classList.add('expanded');
-                        parentHeader.classList.add('active');
-                        const icon = parentHeader.querySelector('.expand-icon');
-                        if (icon) icon.classList.add('expanded');
-                    }
-                }
-            });
+    console.log("PageID:", pageId);
+
+    // Select by data-page attribute instead of onclick
+    const navItems = document.querySelectorAll(
+        `.nav-subitem[data-page="${pageId}"], 
+         .nav-header[data-page="${pageId}"]`
+    );
+
+    navItems.forEach(item => {
+        item.classList.add('active');
+
+        // If it's a subitem, also expand its parent menu
+        if (item.classList.contains('nav-subitem')) {
+            const parentSubmenu = item.parentElement;
+            const parentHeader = parentSubmenu ? parentSubmenu.previousElementSibling : null;
+
+            if (parentSubmenu && parentHeader) {
+                parentSubmenu.classList.add('expanded');
+                parentHeader.classList.add('active');
+                const icon = parentHeader.querySelector('.expand-icon');
+                if (icon) icon.classList.add('expanded');
+            }
         }
-		
-		
-		
+    });
+}
 		
 		
 		
@@ -3912,34 +3974,43 @@ const navItems = document.querySelectorAll(
             pageElement.appendChild(navElement);
             pageElement.appendChild(footerElement);
         }
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.content-page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active');
-                currentPage = pageId;
-                
-                // Update page navigation
-                updatePageNavigation(pageId);
-                
-                // Update sidebar highlighting
-                updateSidebarHighlight(pageId);
-                
-                // Close sidebar on mobile
-                if (window.innerWidth <= 768) {
-                    closeSidebar();
-                }
-                
-                // Scroll to top
-                document.getElementById('mainContent').scrollTop = 0;
-            }
+
+
+
+function showPage(pageId) {
+    // Hide all pages
+    document.querySelectorAll('.content-page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    // Show selected page
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.classList.add('active');
+        currentPage = pageId;
+
+        // Update page navigation
+        updatePageNavigation(pageId);
+
+        // Update sidebar highlighting
+        updateSidebarHighlight(pageId);
+
+        // Close sidebar on mobile
+        if (window.innerWidth <= 768) {
+            closeSidebar();
         }
-		
+
+        // Scroll to top
+        const mainContent = document.getElementById('mainContent');
+        if (mainContent) mainContent.scrollTop = 0;
+
+        // Update URL hash without reloading
+        history.replaceState(null, '', `#${pageId}`);
+    }
+}
+
+
+
 		
         function toggleSubmenu(header) {
             const submenu = header.nextElementSibling;
@@ -4018,6 +4089,8 @@ const navItems = document.querySelectorAll(
         // Search functionality
         document.querySelector('.search-box').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
+        const resultsContainer = document.querySelector('.search-results');
+        resultsContainer.innerHTML = ''; // Clear previous results
             
             if (searchTerm.length > 2) {
                 // Simple search implementation
@@ -4038,18 +4111,50 @@ const navItems = document.querySelectorAll(
                     page.keywords.includes(searchTerm)
                 );
                 
+                
+            
                 if (results.length > 0) {
-                    // Highlight first result or show search suggestions
-                    console.log('Search results:', results);
+                    results.forEach(result => {
+                        const link = document.createElement('a');
+                        link.href = `#${result.id}`;
+                        link.textContent = result.title;
+                        link.classList.add('search-result-item');
+                        
+        // When clicked
+        link.addEventListener('click', function(e) {
+            e.preventDefault();         // Prevent default jump
+            showPage(result.id);        // Show the page
+            resultsContainer.innerHTML = ''; // Clear search results
+          //  searchBox.value = '';       // Optional: clear input
+        });
+
+                        resultsContainer.appendChild(link);
+
+                    });
+                } else {
+                    resultsContainer.textContent = 'No results found.';
                 }
             }
         });
 
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set initial active states
-            showPage('what-is-bzero-x');
-        });
+// Handle hash on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.substring(1); // remove #
+    if (hash && document.getElementById(hash)) {
+        showPage(hash);
+    } else {
+        showPage('what-is-bzero-x'); // default page
+    }
+});
+
+// Optional: handle back/forward navigation
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+        showPage(hash);
+    }
+});
+
     </script>
 </body>
 </html>
