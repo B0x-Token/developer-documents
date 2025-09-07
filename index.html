@@ -4095,16 +4095,127 @@ function showPage(pageId) {
             if (searchTerm.length > 2) {
                 // Simple search implementation
                 const pages = [
-                    { id: 'what-is-bzero-x', title: 'What is B Zero X', keywords: 'bzero overview protocol defi mining' },
-                    { id: 'uniswap-v4-staking', title: 'Uniswap v4 Staking Pool', keywords: 'uniswap staking liquidity pool v4' },
-                    { id: 'proof-of-work', title: 'Proof of Work Contract', keywords: 'mining pow proof work contract' },
-                    { id: 'mainnet', title: 'Mainnet Deployments', keywords: 'mainnet ethereum addresses contracts' },
-                    { id: 'testnet', title: 'Testnet Deployments', keywords: 'testnet sepolia test addresses' },
-                    { id: 'mine-b0x', title: 'How to mine B0x Token', keywords: 'mining guide tutorial b0x mine' },
-                    { id: 'how-to-stake', title: 'How to stake', keywords: 'staking guide stake rewards' },
-                    { id: 'how-to-swap', title: 'How to swap', keywords: 'swap exchange trade tokens' },
-                    { id: 'conversion', title: 'B0x ↔ 0xBitcoin Conversion', keywords: 'conversion convert b0x oxbitcoin' }
-                ];
+    { 
+        id: 'what-is-bzero-x', 
+        title: 'What is B Zero X?', 
+        keywords: 'bzero overview protocol defi mining uniswap v4 proof work liquidity staking rewards permissionless decentralized architecture features' 
+    },
+    { 
+        id: 'proof-of-work', 
+        title: 'Proof of Work Contract', 
+        keywords: 'mining pow proof work contract algorithm keccak256 difficulty adjustment block time halving reward distribution computational consensus' 
+    },
+    { 
+        id: 'uniswap-v4-staking', 
+        title: 'Uniswap v4 Staking Pool', 
+        keywords: 'uniswap v4 staking liquidity pool hooks architecture dynamic fees optimization multi token rewards 45 day periods withdrawal' 
+    },
+    { 
+        id: 'hook-address', 
+        title: 'Hook Address', 
+        keywords: 'hook address flags dynamic fee signal lifecycle callbacks bits afterinitialize beforeswap uniswap v4 mining system' 
+    },
+    { 
+        id: 'hook-miner', 
+        title: 'Hook Miner', 
+        keywords: 'hook miner mining salt addresses uniswap v4 pool creation deployment automatic fee synergy defi benefits' 
+    },
+    { 
+        id: 'conversion', 
+        title: 'B0x ↔ 0xBitcoin Conversion', 
+        keywords: 'conversion convert b0x oxbitcoin 0xbitcoin exchange ratio reversible instant gas optimized architecture technical implementation' 
+    },
+    { 
+        id: 'rights-token', 
+        title: 'RightsTo0xBitcoin Token', 
+        keywords: 'rights token r0xbtc conversion privileges benefits transferable symbol decimals supply obtain secondary market' 
+    },
+    { 
+        id: 'oxbitcoin-token', 
+        title: '0xBitcoin Token', 
+        keywords: '0xbitcoin oxbtc mineable erc20 ethereum bitcoin proof work integration benefits liquidity conversion staking bridging' 
+    },
+    { 
+        id: 'mainnet', 
+        title: 'Mainnet Deployments', 
+        keywords: 'mainnet ethereum production contracts addresses deployment b0x mining lp rewards uniswap hook coming soon' 
+    },
+    { 
+        id: 'testnet', 
+        title: 'Testnet Deployments', 
+        keywords: 'testnet base sepolia test addresses contracts b0x 0xbitcoin mining staking router position finder hook rights token' 
+    },
+    { 
+        id: 'mine-b0x', 
+        title: 'How to mine B0x Token', 
+        keywords: 'mining guide tutorial b0x token miner setup windows ubuntu prerequisites download configuration test eth bridge sepolia' 
+    },
+    { 
+        id: 'how-to-stake', 
+        title: 'How to stake', 
+        keywords: 'staking guide stake rewards uniswap v4 nft positions dapp wallet connect create position approve withdrawal penalty' 
+    },
+    { 
+        id: 'how-to-swap', 
+        title: 'How to swap', 
+        keywords: 'swap exchange trade tokens dex interface pairs slippage protection gas optimization advanced features rates fees' 
+    },
+    { 
+        id: 'how-to-bridge', 
+        title: 'How to bridge', 
+        keywords: 'bridge tokens cross chain networks ethereum sepolia base infrastructure fees time challenge period l2 networks' 
+    },
+    { 
+        id: 'how-to-convert', 
+        title: 'How to convert', 
+        keywords: 'convert conversion mechanism b0x 0xbitcoin fixed rate requirements use cases arbitrage portfolio diversification' 
+    },
+    { 
+        id: 'create-position', 
+        title: 'How to create position in dapp', 
+        keywords: 'create position dapp liquidity management full range analytics performance charts add remove collect fees' 
+    },
+    { 
+        id: 'b0x-lp-rewards', 
+        title: 'B0x LP Rewards Contract', 
+        keywords: 'lp rewards contract uniswap v4 nft staking multi token timelock penalties withdrawal full range positions management' 
+    },
+    { 
+        id: 'b0x-mining-pow', 
+        title: 'B0x Mining Proof of Work', 
+        keywords: 'mining proof work contract base network bitcoin distribution launch economics halving schedule batch optimization compensation' 
+    },
+    { 
+        id: 'b0x-mainnet', 
+        title: 'B0x Mainnet Contract', 
+        keywords: 'mainnet contract erc20 token 0xbitcoin conversion system ethereum security stability bidirectional permit gasless approvals' 
+    },
+    { 
+        id: 'rights-token-contract', 
+        title: 'RightsTo0xBitcoinToken Contract', 
+        keywords: 'rights token contract r0xbtc conversion system auto deployed immutable owner mint burn erc20 permit inheritance' 
+    },
+    { 
+        id: 'position-finder', 
+        title: 'Position Finder Pro', 
+        keywords: 'position finder utility contract discovery analysis uniswap v4 advanced gas optimized batch operations mathematical precision' 
+    },
+    { 
+        id: 'univ4-hook', 
+        title: 'UniV4Hook Contract', 
+        keywords: 'univ4 hook contract custom uniswap v4 implementation enhanced functionality beforeswap afterswap dynamic fees mev protection' 
+    },
+    { 
+        id: 'hook-miner-contract', 
+        title: 'HookMiner Contract', 
+        keywords: 'hook miner contract mining rewards distribution integration hook data parameters liquidity providers traders additional rewards' 
+    },
+    { 
+        id: 'pool-creator', 
+        title: 'UniswapV4PoolCreator Contract', 
+        keywords: 'pool creator factory contract uniswap v4 pools b zero x integration fee tiers tick spacing configuration' 
+    }
+];
                 
                 const results = pages.filter(page => 
                     page.title.toLowerCase().includes(searchTerm) || 
