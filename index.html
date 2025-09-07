@@ -1386,7 +1386,7 @@ body {
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
         <div class="nav-item">
-    <button class="nav-header" data-page="what-is-bzero-x" onclick="showPage('what-is-bzero-x')">
+    <button class="nav-header" data-page="what-is-b-zero-x" onclick="showPage('what-is-b-zero-x')">
         What is B Zero X?
     </button>
 </div>
@@ -1466,7 +1466,7 @@ body {
     <!-- Main Content -->
     <main class="main-content" id="mainContent">
         <!-- What is B Zero X Page -->
-        <div class="content-page active" id="what-is-bzero-x">
+        <div class="content-page active" id="what-is-b-zero-x">
             <div class="content-header">
                 <h1 class="content-title">What is B Zero X?</h1>
                 <p class="content-description">
@@ -5728,12 +5728,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Rest of your existing JavaScript...
-let currentPage = 'what-is-bzero-x';
+let currentPage = 'what-is-b-zero-x';
 
 
         // Define page order for navigation
         const pageOrder = [
-            'what-is-bzero-x',
+            'what-is-b-zero-x',
             'proof-of-work',
             'uniswap-v4-staking',
             'hook-address',
@@ -5760,7 +5760,7 @@ let currentPage = 'what-is-bzero-x';
         ];
 
         const pageTitles = {
-            'what-is-bzero-x': 'What is B Zero X?',
+            'what-is-b-zero-x': 'What is B Zero X?',
             'proof-of-work': 'Proof of Work Contract',
             'uniswap-v4-staking': 'Uniswap v4 Staking Pool',
             'hook-address': 'Hook Address',
@@ -5946,6 +5946,20 @@ function showPage(pageId) {
         const mainContent = document.getElementById('mainContent');
         if (mainContent) mainContent.scrollTop = 0;
 
+        // Also scroll window to top as backup
+        // Also scroll window to top as backup
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        // Force scroll after a brief delay to ensure DOM is ready
+        setTimeout(() => {
+            if (mainContent) {
+                mainContent.scrollTop = 0;
+            }
+            window.scrollTo(0, 0);
+        }, 50);
+        console.log("scrolled to top");
         // Update URL hash without reloading
         history.replaceState(null, '', `#${pageId}`);
     }
@@ -6038,7 +6052,7 @@ function showPage(pageId) {
                 // Simple search implementation
                 const pages = [
     { 
-        id: 'what-is-bzero-x', 
+        id: 'what-is-b-zero-x', 
         title: 'What is B Zero X?', 
         keywords: 'bzero overview protocol defi mining uniswap v4 proof work liquidity staking rewards permissionless decentralized architecture features' 
     },
@@ -6196,7 +6210,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hash && document.getElementById(hash)) {
         showPage(hash);
     } else {
-        showPage('what-is-bzero-x'); // default page
+        showPage('what-is-b-zero-x'); // default page
     }
 });
 
