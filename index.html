@@ -531,6 +531,19 @@ body {
     cursor: pointer;
 }
 
+.code-block2 {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    margin: 15px 0;
+    white-space: pre-line;
+    overflow-x: auto;
+    position: relative;
+    cursor: pointer;
+}
+
 .warning-note {
     background: rgba(255, 193, 7, 0.1);
     border: 1px solid #ffc107;
@@ -1610,7 +1623,15 @@ body {
         <div class="contract-address">0x4A437511e57f69507386B5866D48668884F63cbB</div>
         <a href="https://sepolia.basescan.org/address/0x4A437511e57f69507386B5866D48668884F63cbB" target="_blank" class="link">🔍 View on BaseScan</a>
       </div>
+      <div class="contract-card">
+        <div class="contract-name">UniswapV4PoolCreator</div>
 
+        <div class="contract-description">Creates our Uniswap Dynamic Fee Custom Hook Address Pool For B0x/0xBTC</div>
+        <div class="contract-address">0x24984FF72AA6bB298Ea7F369E36116F054642697 </div>
+        <a href="https://sepolia.basescan.org/address/0x24984FF72AA6bB298Ea7F369E36116F054642697 " target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      
     </div>
   </div>
 
@@ -2305,18 +2326,17 @@ body {
                     <p><strong>1 B0x + 1 RightsTo0xBitcoin Token = 1 0xBitcoin</strong> (1:1 ratio)</p>
 
                     <h3>Conversion Process</h3>
-                    <div class="code-block">
+                    <div class="code-block2">
 // Convert B0x to 0xBitcoin
-await conversionContract.convertToOxBitcoin(amount);
+await b0xContract.withdrawFromV2toV1(amountOf0xBTC);
 
 // Convert 0xBitcoin to B0x
-await conversionContract.convertToBZeroX(amount);
+await b0xContract.depositFromV1toV2(amount);
                     </div>
 
                     <h3>Requirements</h3>
                     <ul>
-                        <li>Hold B0x&RightsTo0xBitcoin or 0xBitcoin tokens</li>
-                        <li>Approve conversion contract</li>
+                        <li>Hold RightsTo0xBitcoin and B0x Tokens or 0xBitcoin tokens</li>
                         <li>Pay gas fees for transaction</li>
                     </ul>
 
@@ -2707,6 +2727,11 @@ await conversionContract.convertToBZeroX(amount);
                     <div class="address">0xB6eD7644C69416d67B522e20bC294A9a9B405B31</div>
                 </span>
             </div>
+            
+            <div class="info-item">
+                <span class="info-label">Network:</span>
+                <span class="network-badge">Base Sepolia Testnet</span>
+            </div>
         </div>
 
         <div class="card">
@@ -2885,7 +2910,7 @@ await conversionContract.convertToBZeroX(amount);
         <div class="card">
             <h2>⚙️ Usage Examples</h2>
             <h3>Convert 0xBitcoin to B0x</h3>
-            <div class="code-block">
+            <div class="code-block2">
 // Approve B0x contract to spend your 0xBTC
 0xBTC.approve(b0xContract, amount);
 
@@ -2896,7 +2921,7 @@ b0xContract.depositFromV1toV2(amount);
             </div>
 
             <h3>Convert Back to 0xBitcoin</h3>
-            <div class="code-block">
+            <div class="code-block2">
 // Must have both B0x and R0xBTC tokens
 // Specify amount in 0xBTC terms (8 decimals)
 b0xContract.withdrawFromV2toV1(amountOf0xBTC);
@@ -2906,7 +2931,7 @@ b0xContract.withdrawFromV2toV1(amountOf0xBTC);
             </div>
 
             <h3>Gasless Approval (Permit)</h3>
-            <div class="code-block">
+            <div class="code-block2">
 // Sign permit message off-chain
 // Submit permit + transfer in one transaction
 b0xContract.permit(owner, spender, value, deadline, v, r, s);
@@ -3172,7 +3197,7 @@ function burnToken(uint256 _amount, address _from) external onlyOwner {
             </div>
 
             <h3>Conversion Flow</h3>
-            <div class="code-block">
+            <div class="code-block2">
 // Step 1: User deposits 0xBTC to B0x_Mainnet
 b0xMainnet.depositFromV1toV2(amount);
 
@@ -3239,7 +3264,7 @@ rightsContract.burnToken(amount * 10**10, userAddress);
             </div>
 
             <h3>Constructor Parameters</h3>
-            <div class="code-block">
+            <div class="code-block2">
 constructor() 
     ERC20("Rights To 0xBitcoin Token", "R0xBTC", 18, 10_835_900 * 10**18) 
     ERC20Permit("Rights To 0xBitcoin Token") 
@@ -3421,7 +3446,7 @@ constructor()
             <div class="card">
                 <h2>Mathematical Functions</h2>
                 <h3>Price and Liquidity Calculations</h3>
-                <div class="code-block">
+                <div class="code-block2">
 // Tick to sqrt price conversion
 function getSqrtRatioAtTick(int24 tick) internal pure returns (uint160)
 
@@ -3456,7 +3481,7 @@ function mulDiv(uint256 a, uint256 b, uint256 denominator)
             <div class="card">
                 <h2>Usage Examples</h2>
                 <h3>Finding User Positions</h3>
-                <div class="code-block">
+                <div class="code-block2">
 // Find all positions for user in token range
 (uint256[] memory tokenIds, 
  uint256[] memory amountA, 
@@ -3476,7 +3501,7 @@ function mulDiv(uint256 a, uint256 b, uint256 denominator)
                 </div>
 
                 <h3>Filtering by Minimum Amount</h3>
-                <div class="code-block">
+                <div class="code-block2">
 // Find positions with minimum token A amount
 (uint256[] memory qualifyingTokens, ...) = 
     positionFinder.findUserTokenIdswithMinimum(
@@ -3524,97 +3549,994 @@ function mulDiv(uint256 a, uint256 b, uint256 denominator)
 
 
 
-
-        <div class="content-page" id="univ4-hook">
+<div class="content-page" id="univ4-hook">
             <div class="content-header">
-                <h1 class="content-title">UniV4Hook Contract</h1>
-                <p class="content-description">
-                    Custom Uniswap v4 hook implementation for enhanced functionality.
-                </p>
+                <h1>UniV4Hook - Dynamic Fee Management</h1>
+                <p>Uniswap V4 hook contract implementation for dynamic liquidity provider fee management. Enables real-time fee adjustments for optimized pool performance within the B0x Token ecosystem.</p>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x5678901234567890123456789012345678901234</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
+            <div class="launch-info">
+                <h3>Contract Overview</h3>
+                <div class="info-item">
+                    <span class="info-label">Purpose:</span>
+                    <span class="info-value">Dynamic fee management for Uniswap V4 pools</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Protocol:</span>
+                    <span class="info-value">Uniswap V4 Hook Integration</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Features:</span>
+                    <span class="info-value">Real-time fee updates, pool initialization, ownership management</span>
+                </div>
+            </div>
 
-                    <h3>Hook Functions</h3>
-                    <ul>
-                        <li><code>beforeSwap()</code> - Pre-swap logic execution</li>
-                        <li><code>afterSwap()</code> - Post-swap logic execution</li>
-                        <li><code>beforeAddLiquidity()</code> - Pre-liquidity addition logic</li>
-                        <li><code>afterAddLiquidity()</code> - Post-liquidity addition logic</li>
+            <div class="warning">
+                <strong>IMPORTANT NOTES</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Hook contract requires valid address generation through Hook Miner</li>
+                    <li>Only pool manager can trigger hook functions</li>
+                    <li>Owner-only functions for fee management and ownership transfer</li>
+                    <li>Maximum fee cap of 90% with minimum of 0.01%</li>
+                    <li>Initial pool fee set to 2% upon initialization</li>
+                </ul>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h2>Contract Information</h2>
+                    <div class="info-item">
+                        <span class="info-label">Contract Name:</span>
+                        <span class="info-value">UniV4Hook</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Pool Manager:</span>
+                        <span class="info-value">0x05E73354cFDd6745C338b50BcFDfA3Aa6fA03408</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hook Type:</span>
+                        <span class="info-value">afterInitialize Only</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Network:</span>
+                        <span class="network-badge">Base Sepolia Testnet</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Protocol:</span>
+                        <span class="info-value">Uniswap V4</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Core Functions</h2>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">afterInitialize(address sender, PoolKey_Hook calldata key, uint160 sqrtPriceX96, int24 tick)</span><br>
+                            Hook function called after pool initialization. Sets initial 2% fee and validates caller
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">getCurrentPoolFee(PoolKey_Hook memory poolKey)</span><br>
+                            Returns the current fee tier for a given pool key
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">getCurrentPoolFeeByPoolID(bytes32 poolId)</span><br>
+                            Returns the current fee tier for a given pool ID
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">getHookPermissions()</span><br>
+                            Returns hook permissions structure (afterInitialize: true, all others: false)
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">toId(PoolKey_Hook memory poolKey)</span><br>
+                            Generates unique pool ID from pool key parameters using keccak256
+                        </div>
+                    </div>
+
+                    <h3>Administrative Functions</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">transferOwner(address newOwner)</span><br>
+                            Transfers contract ownership to a new address (owner-only)
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">forceUpdateLPFee(PoolKey_Hook calldata key, uint24 newFee)</span><br>
+                            Owner-only function to manually update LP fees for a specific pool (0.01% - 90% range)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Hook Architecture</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">After Initialize</div>
+                            <div class="stat-label">Hook Type</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Dynamic Fees</div>
+                            <div class="stat-label">Core Feature</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Owner Controlled</div>
+                            <div class="stat-label">Access Model</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Pool Manager</div>
+                            <div class="stat-label">Integration</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li><strong>Dynamic Fee Management:</strong> Real-time LP fee adjustments from 0.01% to 90%</li>
+                        <li><strong>Pool Initialization:</strong> Automatic 2% fee setup for new pools</li>
+                        <li><strong>Access Control:</strong> Owner-only administrative functions</li>
+                        <li><strong>Pool Tracking:</strong> Comprehensive fee tracking per pool ID</li>
+                        <li><strong>Event Logging:</strong> Fee changes and ownership transfers logged</li>
+                        <li><strong>ETH Reception:</strong> Contract can receive ETH payments</li>
+                        <li><strong>Validation:</strong> Proper hook selector validation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Fee Management</h2>
+                    <h3>Fee Configuration</h3>
+                    <div class="info-item">
+                        <span class="info-label">Initial Fee:</span>
+                        <span class="info-value">20000 (2.00%)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Minimum Fee:</span>
+                        <span class="info-value">100 (0.01%)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Maximum Fee:</span>
+                        <span class="info-value">900000 (90.00%)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Fee Format:</span>
+                        <span class="info-value">Hundredths of a bip (10000 = 1%)</span>
+                    </div>
+
+                    <h3>Pool State Tracking</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">mapping(bytes32 => uint24) poolCurrentFees</span><br>
+                            Tracks current fee for each pool by pool ID
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">uint24 public currentFee</span><br>
+                            Last updated fee for the liquidity pool managed by this hook
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Hook Permissions</h2>
+                    <h3>Enabled Hooks</h3>
+                    <div class="code-block2">
+afterInitialize: true    // Called after pool creation
+beforeInitialize: false
+beforeAddLiquidity: false
+afterAddLiquidity: false
+beforeRemoveLiquidity: false
+afterRemoveLiquidity: false
+beforeSwap: false
+afterSwap: false
+beforeDonate: false
+afterDonate: false
+beforeSwapReturnDelta: false
+afterSwapReturnDelta: false
+afterAddLiquidityReturnDelta: false
+afterRemoveLiquidityReturnDelta: false
+                    </div>
+
+                    <h3>PoolKey Structure</h3>
+                    <div class="code-block2">
+struct PoolKey_Hook {
+    address currency0;      // First token (smaller address)
+    address currency1;      // Second token (larger address)
+    uint24 fee;            // Fee tier in hundredths of bip
+    int24 tickSpacing;     // Price granularity
+    address hooks;         // Hook contract address
+}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Usage Examples</h2>
+                    <h3>Initialize Pool with Hook</h3>
+                    <div class="code-block2">
+// Pool automatically gets 2% initial fee
+PoolKey_Hook memory key = PoolKey_Hook({
+    currency0: token0Address,
+    currency1: token1Address,
+    fee: 0, // Will be set by hook
+    tickSpacing: 60,
+    hooks: hookAddress
+});
+
+// Hook sets initial fee to 20000 (2%)
+                    </div>
+
+                    <h3>Update Pool Fee</h3>
+                    <div class="code-block2">
+// Owner can update fee between 0.01% and 90%
+uint24 newFee = 30000; // 3%
+hook.forceUpdateLPFee(poolKey, newFee);
+
+// Check current fee
+uint24 currentFee = hook.getCurrentPoolFee(poolKey);
+                    </div>
+
+                    <h3>Transfer Ownership</h3>
+                    <div class="code-block2">
+// Transfer hook ownership
+address newOwner = 0x1234...;
+hook.transferOwner(newOwner);
+
+// Verify new owner
+address owner = hook.owner();
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Events</h2>
+                    <h3>Fee Management Events</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">event NewFeeRate(uint24 newFee, uint24 oldFee)</span><br>
+                            Emitted when LP fee is updated with old and new fee values
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)</span><br>
+                            Emitted when contract ownership is transferred
+                        </div>
+                    </div>
+
+                    <h3>Error Conditions</h3>
+                    <div class="info-item">
+                        <span class="info-label">Invalid Caller:</span>
+                        <span class="info-value">"Only PoolManager can call" (for hook functions)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Unauthorized:</span>
+                        <span class="info-value">"Only owner can call" (for admin functions)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Invalid Fee:</span>
+                        <span class="info-value">"Max is 90% fee rate" (fee validation)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Zero Address:</span>
+                        <span class="info-value">"New owner cannot be zero address"</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Security Model</h2>
+                    <ul class="feature-list">
+                        <li><strong>Access Control:</strong> Owner-only administrative functions with proper validation</li>
+                        <li><strong>Pool Manager Validation:</strong> Only official Uniswap V4 Pool Manager can call hooks</li>
+                        <li><strong>Fee Bounds:</strong> Strict limits on fee ranges (0.01% - 90%)</li>
+                        <li><strong>Hook Selector Validation:</strong> Proper return of function selectors</li>
+                        <li><strong>Address Validation:</strong> Zero address checks for ownership transfers</li>
+                        <li><strong>Immutable References:</strong> Pool Manager address cannot be changed</li>
+                        <li><strong>ETH Reception:</strong> Safe receive function for contract payments</li>
                     </ul>
 
-                    <h3>Enhanced Features</h3>
-                    <ul>
-                        <li>Dynamic fee adjustment</li>
-                        <li>MEV protection</li>
-                        <li>Reward distribution</li>
-                        <li>Position management automation</li>
-                    </ul>
+                    <h3>Integration Requirements</h3>
+                    <div class="info-item">
+                        <span class="info-label">Hook Address:</span>
+                        <span class="info-value">Must be generated through Hook Miner for validation</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Pool Manager:</span>
+                        <span class="info-value">Immutable reference to official Uniswap V4 contract</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Owner Setup:</span>
+                        <span class="info-value">Constructor sets initial owner (included in salt generation)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Permission Model:</span>
+                        <span class="info-value">Only afterInitialize hook enabled for minimal attack surface</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="content-page" id="hook-miner-contract">
+
+
+
+
+
+<div class="content-page" id="hook-miner-contract">
             <div class="content-header">
-                <h1 class="content-title">HookMiner Contract</h1>
-                <p class="content-description">
-                    Mining contract specifically designed for hook-based reward distribution.
-                </p>
+                <h1>HookMiner - Uniswap V4 Hook Address Generator</h1>
+                <p>Advanced mining contract for generating valid Uniswap V4 hook addresses that pass address validation. Uses CREATE2 deterministic deployment with salt mining to find addresses matching required hook flags.</p>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x6789012345678901234567890123456789012345</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
+            <div class="launch-info">
+                <h3>Contract Overview</h3>
+                <div class="info-item">
+                    <span class="info-label">Purpose:</span>
+                    <span class="info-value">Generate valid hook addresses for Uniswap V4 deployment</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Method:</span>
+                    <span class="info-value">CREATE2 salt mining with flag validation</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Features:</span>
+                    <span class="info-value">Address prediction, salt discovery, deterministic deployment</span>
+                </div>
+            </div>
 
-                    <h3>Mining Functions</h3>
-                    <ul>
-                        <li><code>mineWithHook(bytes calldata hookData)</code> - Mine with hook integration</li>
-                        <li><code>getHookReward()</code> - Get additional hook rewards</li>
-                        <li><code>setHookParameters(bytes calldata params)</code> - Configure hook params</li>
+            <div class="warning">
+                <strong>IMPORTANT NOTES</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Hook addresses must pass Uniswap V4 validation to be deployable</li>
+                    <li>Only specific bit patterns in addresses are accepted as valid hooks</li>
+                    <li>Salt mining may require significant computational effort</li>
+                    <li>Contract admin is set permanently during HookMiner deployment</li>
+                    <li>Deployed hooks use CREATE2 for deterministic addresses</li>
+                </ul>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h2>Contract Information</h2>
+                    <div class="info-item">
+                        <span class="info-label">Contract Name:</span>
+                        <span class="info-value">HookMiner</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hook Type:</span>
+                        <span class="info-value">UniV4Hook (afterInitialize only)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Deployment Method:</span>
+                        <span class="info-value">CREATE2 Deterministic</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Network:</span>
+                        <span class="network-badge">Base Sepolia Testnet</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Protocol:</span>
+                        <span class="info-value">Uniswap V4</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Core Functions</h2>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">findValidSalt(uint256 startSalt, uint256 maxAttempts)</span><br>
+                            Searches for a salt value that generates a valid hook address within attempt limit
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">deployHook(uint256 salt)</span><br>
+                            Deploys UniV4Hook contract using valid salt with CREATE2 deployment
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">isValidHookAddress(address hook)</span><br>
+                            Validates if an address has exactly the required hook flags (afterInitialize only)
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">computeAddress(uint256 salt, bytes memory bytecode, bytes memory args)</span><br>
+                            Predicts the deployment address for given salt and bytecode
+                        </div>
+                    </div>
+
+                    <h3>State Variables</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">address public ADMINOFHOOK</span><br>
+                            Admin address set during deployment, becomes owner of all deployed hooks
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">uint160 constant ALL_HOOK_MASK</span><br>
+                            Bitmask for all possible hook flags (16383 = (1 << 14) - 1)
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">uint160 constant DESIRED_FLAGS</span><br>
+                            Required flags for valid hooks (AFTER_INITIALIZE_FLAG = 1 << 12)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Hook Validation System</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">Address Mining</div>
+                            <div class="stat-label">Generation Method</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Flag Validation</div>
+                            <div class="stat-label">Address Check</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">CREATE2</div>
+                            <div class="stat-label">Deployment Type</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Deterministic</div>
+                            <div class="stat-label">Address Nature</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Hook Flag Requirements</h3>
+                    <ul class="feature-list">
+                        <li><strong>After Initialize:</strong> Flag must be set (bit 12 = 4096)</li>
+                        <li><strong>All Other Flags:</strong> Must be unset for validation to pass</li>
+                        <li><strong>Address Pattern:</strong> Lower 14 bits must equal 4096 exactly</li>
+                        <li><strong>Validation Logic:</strong> (address & ALL_HOOK_MASK) == DESIRED_FLAGS</li>
+                        <li><strong>Bit Position:</strong> After initialize flag at position 1 << 12</li>
+                        <li><strong>Mask Value:</strong> ALL_HOOK_MASK = 16383 (covers all 14 flag bits)</li>
+                        <li><strong>Required Pattern:</strong> Only afterInitialize bit set, all others clear</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Salt Mining Process</h2>
+                    <h3>Mining Algorithm</h3>
+                    <div class="code-block2">
+1. Start with initial salt value
+2. Generate bytecode + constructor args
+3. Compute CREATE2 address for current salt
+4. Check if address has valid hook flags
+5. If valid: return salt and address
+6. If invalid: increment salt and repeat
+7. Continue until maxAttempts reached
+                    </div>
+
+                    <h3>Address Computation</h3>
+                    <div class="code-block2">
+// CREATE2 address calculation
+keccak256(abi.encodePacked(
+    bytes1(0xff),           // CREATE2 prefix
+    address(this),          // Deployer (HookMiner)
+    salt,                   // Salt value
+    keccak256(bytecode + args)  // Init code hash
+))
+                    </div>
+
+                    <h3>Mining Parameters</h3>
+                    <div class="info-item">
+                        <span class="info-label">Success Probability:</span>
+                        <span class="info-value">1 in 16,384 addresses (1/2^14)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Expected Attempts:</span>
+                        <span class="info-value">~8,192 iterations on average</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Worst Case:</span>
+                        <span class="info-value">Up to maxAttempts iterations</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Deployment Workflow</h2>
+                    <h3>Step-by-Step Process</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">1. Deploy HookMiner</span><br>
+                            Deploys the miner contract, sets msg.sender as ADMINOFHOOK
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">2. Find Valid Salt</span><br>
+                            Call findValidSalt() to discover a salt that generates valid hook address
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">3. Deploy Hook</span><br>
+                            Use deployHook() with discovered salt to deploy actual UniV4Hook contract
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">4. Verify Address</span><br>
+                            Confirm deployed hook address passes isValidHookAddress() validation
+                        </div>
+                    </div>
+
+                    <h3>Constructor Arguments</h3>
+                    <div class="info-item">
+                        <span class="info-label">Hook Owner:</span>
+                        <span class="info-value">ADMINOFHOOK address (set during HookMiner deployment)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Bytecode:</span>
+                        <span class="info-value">type(UniV4Hook).creationCode</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Encoded Args:</span>
+                        <span class="info-value">abi.encode(address(ADMINOFHOOK))</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Usage Examples</h2>
+                    <h3>Mine for Valid Salt</h3>
+                    <div class="code-block2">
+// Find a valid salt starting from 0, max 50000 attempts
+(uint256 validSalt, address predictedAddress) = 
+    hookMiner.findValidSalt(0, 50000);
+
+// Verify the address is valid
+bool isValid = hookMiner.isValidHookAddress(predictedAddress);
+require(isValid, "Generated address is not valid");
+                    </div>
+
+                    <h3>Deploy Hook with Valid Salt</h3>
+                    <div class="code-block2">
+// Deploy the hook using discovered salt
+address deployedHook = hookMiner.deployHook(validSalt);
+
+// Verify deployment succeeded and address matches
+require(deployedHook == predictedAddress, "Address mismatch");
+require(hookMiner.isValidHookAddress(deployedHook), "Deployed hook invalid");
+                    </div>
+
+                    <h3>Pre-compute Hook Address</h3>
+                    <div class="code-block2">
+// Predict address before deployment
+bytes memory bytecode = type(UniV4Hook).creationCode;
+bytes memory args = abi.encode(adminAddress);
+address predicted = hookMiner.computeAddress(salt, bytecode, args);
+
+// Check if predicted address would be valid
+if (hookMiner.isValidHookAddress(predicted)) {
+    // Safe to deploy with this salt
+}
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Flag System Details</h2>
+                    <h3>Hook Flag Mapping</h3>
+                    <div class="code-block2">
+// All possible hook flags (commented out unused flags)
+// uint160 constant BEFORE_INITIALIZE_FLAG = 1 << 13;      // 8192
+uint160 constant AFTER_INITIALIZE_FLAG = 1 << 12;          // 4096 ✓
+// uint160 constant BEFORE_ADD_LIQUIDITY_FLAG = 1 << 11;   // 2048
+// uint160 constant AFTER_ADD_LIQUIDITY_FLAG = 1 << 10;    // 1024
+// uint160 constant BEFORE_REMOVE_LIQUIDITY_FLAG = 1 << 9; // 512
+// uint160 constant AFTER_REMOVE_LIQUIDITY_FLAG = 1 << 8;  // 256
+// uint160 constant BEFORE_SWAP_FLAG = 1 << 7;             // 128
+// uint160 constant AFTER_SWAP_FLAG = 1 << 6;              // 64
+// uint160 constant BEFORE_DONATE_FLAG = 1 << 5;           // 32
+// uint160 constant AFTER_DONATE_FLAG = 1 << 4;            // 16
+// uint160 constant BEFORE_SWAP_RETURNS_DELTA_FLAG = 1 << 3; // 8
+// uint160 constant AFTER_SWAP_RETURNS_DELTA_FLAG = 1 << 2;  // 4
+// uint160 constant AFTER_ADD_LIQUIDITY_RETURNS_DELTA_FLAG = 1 << 1; // 2
+// uint160 constant AFTER_REMOVE_LIQUIDITY_RETURNS_DELTA_FLAG = 1 << 0; // 1
+                    </div>
+
+                    <h3>Validation Mathematics</h3>
+                    <div class="info-item">
+                        <span class="info-label">ALL_HOOK_MASK:</span>
+                        <span class="info-value">16383 (binary: 11111111111111)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">DESIRED_FLAGS:</span>
+                        <span class="info-value">4096 (binary: 01000000000000)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Valid Pattern:</span>
+                        <span class="info-value">Address & 16383 must equal 4096</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Success Rate:</span>
+                        <span class="info-value">1/16384 ≈ 0.0061% chance per attempt</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Security Model</h2>
+                    <ul class="feature-list">
+                        <li><strong>Deterministic Deployment:</strong> CREATE2 ensures predictable addresses</li>
+                        <li><strong>Address Validation:</strong> Strict flag checking prevents invalid deployments</li>
+                        <li><strong>Admin Control:</strong> ADMINOFHOOK set once during deployment, immutable</li>
+                        <li><strong>Revert Protection:</strong> Deployment fails if hook address validation fails</li>
+                        <li><strong>Gas Efficiency:</strong> Assembly-optimized address computation</li>
+                        <li><strong>No State Changes:</strong> Mining functions are view-only for gas efficiency</li>
+                        <li><strong>Bytecode Integrity:</strong> Uses type().creationCode for accurate bytecode</li>
                     </ul>
 
-                    <h3>Hook Integration</h3>
-                    <p>
-                        This contract integrates mining rewards with Uniswap v4 hook functionality, 
-                        providing additional rewards for liquidity providers and traders.
-                    </p>
+                    <h3>Deployment Risks</h3>
+                    <div class="info-item">
+                        <span class="info-label">Salt Collision:</span>
+                        <span class="info-value">Extremely unlikely due to keccak256 distribution</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mining Failure:</span>
+                        <span class="info-value">Reverts if no valid salt found in maxAttempts range</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Gas Costs:</span>
+                        <span class="info-value">Mining may require significant gas for computation</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Admin Setup:</span>
+                        <span class="info-value">ADMINOFHOOK cannot be changed after deployment</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="content-page" id="pool-creator">
+      <div class="content-page" id="pool-creator">
             <div class="content-header">
-                <h1 class="content-title">UniswapV4PoolCreator Contract</h1>
-                <p class="content-description">
-                    Factory contract for creating new Uniswap v4 pools with B Zero X integration.
-                </p>
+                <h1>UniswapV4PoolCreator - B0x Pool Factory</h1>
+                <p>Specialized pool creation contract for B0x Token integration with Uniswap V4. Automatically sets optimal pricing ratios and initializes pools with dynamic fee structures for the B0x ecosystem.</p>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x7890123456789012345678901234567890123456</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
+            <div class="launch-info">
+                <h3>Contract Overview</h3>
+                <div class="info-item">
+                    <span class="info-label">Purpose:</span>
+                    <span class="info-value">Create Uniswap V4 pools with B0x token pricing</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Price Ratio:</span>
+                    <span class="info-value">20 B0x = 1 other token (0.05 ratio)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Features:</span>
+                    <span class="info-value">Decimal adjustment, price calculation, pool initialization</span>
+                </div>
+            </div>
 
-                    <h3>Pool Creation Functions</h3>
-                    <ul>
-                        <li><code>createPool(address tokenA, address tokenB, uint24 fee, int24 tickSpacing)</code></li>
-                        <li><code>getPool(address tokenA, address tokenB, uint24 fee)</code></li>
-                        <li><code>enableFeeAmount(uint24 fee, int24 tickSpacing)</code></li>
+            <div class="warning">
+                <strong>IMPORTANT NOTES</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Must adjust poolManager for mainnet launch</li>
+                    <li>Economic ratio hardcoded: 20 B0x tokens = 1 other token</li>
+                    <li>Automatic decimal adjustment for different token configurations</li>
+                    <li>Uses dynamic fee flag (0x800000) for hook-managed fees</li>
+                    <li>Pool Manager address must match deployment network</li>
+                    <li>Supports hook contracts or address(0) for no hooks</li>
+                </ul>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h2>Contract Information</h2>
+                    <div class="info-item">
+                        <span class="info-label">Contract Name:</span>
+                        <span class="info-value">UniswapV4PoolCreator</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Pool Manager:</span>
+                        <span class="info-value">0x05E73354cFDd6745C338b50BcFDfA3Aa6fA03408</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">B0x Token:</span>
+                        <span class="info-value">Set during deployment (immutable)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Network:</span>
+                        <span class="network-badge">Base Sepolia Testnet</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Protocol:</span>
+                        <span class="info-value">Uniswap V4</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Core Functions</h2>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">createNewPool(address tokenA, address tokenB, address hookContract)</span><br>
+                            Creates new Uniswap V4 pool with B0x pricing, sorting tokens and calculating optimal price ratios
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">calculateDecimalAdjustedPrice(address token0, address token1, uint8 decimals0, uint8 decimals1)</span><br>
+                            Calculates price ratio accounting for token decimals with 20:1 B0x economic model
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">sqrtPriceX96FromPriceRatio(uint256 priceRatio18Decimal)</span><br>
+                            Converts 18-decimal price ratio to Uniswap's sqrtPriceX96 format
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">encodeDynamicFee()</span><br>
+                            Returns dynamic fee flag (0x800000) for hook-controlled fee management
+                        </div>
+                    </div>
+
+                    <h3>Debug Functions</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">debugDecimalAdjustedPrice(address tokenA, address tokenB)</span><br>
+                            Returns detailed price calculation breakdown with explanations
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">debugPriceCalculation(address tokenA, address tokenB)</span><br>
+                            Shows step-by-step price calculation with numerator/denominator breakdown
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Pricing Architecture</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">20:1 Ratio</div>
+                            <div class="stat-label">B0x Economic Model</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Decimal Adjusted</div>
+                            <div class="stat-label">Price Calculation</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Dynamic Fees</div>
+                            <div class="stat-label">Fee Structure</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">SqrtPriceX96</div>
+                            <div class="stat-label">Uniswap Format</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Price Calculation Logic</h3>
+                    <ul class="feature-list">
+                        <li><strong>Economic Ratio:</strong> 20 B0x tokens = 1 other token (price = 0.05)</li>
+                        <li><strong>Token Sorting:</strong> Automatic address-based sorting for Uniswap compatibility</li>
+                        <li><strong>Decimal Adjustment:</strong> Accounts for different token decimal configurations</li>
+                        <li><strong>Precision:</strong> 18-decimal intermediate calculations for accuracy</li>
+                        <li><strong>Format Conversion:</strong> Converts to Uniswap's sqrtPriceX96 standard</li>
+                        <li><strong>Mathematical Safety:</strong> Babylonian square root with overflow protection</li>
+                        <li><strong>Bidirectional Logic:</strong> Handles B0x as token0 or token1 correctly</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Price Calculation Details</h2>
+                    <h3>Scenario 1: B0x as Token0</h3>
+                    <div class="code-block2">
+// When B0x is the smaller address (token0)
+// Uniswap price = token1/token0 = other/B0x = 0.05
+
+uint256 numerator = 10**decimals1 * 1e18;     // Other token units
+uint256 denominator = 20 * 10**decimals0;     // 20 B0x units
+priceRatio = numerator / denominator;          // = 0.05 in 18-decimal
+                    </div>
+
+                    <h3>Scenario 2: B0x as Token1</h3>
+                    <div class="code-block2">
+// When B0x is the larger address (token1)
+// Uniswap price = token1/token0 = B0x/other = 20
+
+uint256 numerator = 20 * 10**decimals1 * 1e18;  // 20 B0x units
+uint256 denominator = 1 * 10**decimals0;        // 1 other token unit
+priceRatio = numerator / denominator;            // = 20 in 18-decimal
+                    </div>
+
+                    <h3>SqrtPriceX96 Conversion</h3>
+                    <div class="code-block2">
+// Convert 18-decimal price ratio to Uniswap format
+uint256 sqrtPrice = sqrt(priceRatio18Decimal);   // Babylonian method
+uint160 sqrtPriceX96 = (sqrtPrice * (2 ** 96)) / 1e9;  // X96 format
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Pool Configuration</h2>
+                    <h3>PoolKey Structure</h3>
+                    <div class="code-block2">
+IPoolManager.PoolKey memory key = IPoolManager.PoolKey({
+    currency0: Currency2.wrap(token0),     // Smaller address
+    currency1: Currency2.wrap(token1),     // Larger address
+    fee: encodeDynamicFee(),               // 0x800000 (dynamic)
+    tickSpacing: 60,                       // Standard spacing
+    hooks: hookContract                    // Hook or address(0)
+});
+                    </div>
+
+                    <h3>Configuration Parameters</h3>
+                    <div class="info-item">
+                        <span class="info-label">Fee Structure:</span>
+                        <span class="info-value">Dynamic (0x800000) - controlled by hooks</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Tick Spacing:</span>
+                        <span class="info-value">60 (standard granularity)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Currency Type:</span>
+                        <span class="info-value">Currency2 wrapper for addresses</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hook Support:</span>
+                        <span class="info-value">Optional hook contract or address(0)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Mathematical Functions</h2>
+                    <h3>Square Root Implementation</h3>
+                    <div class="code-block2">
+function sqrt(uint256 x) internal pure returns (uint256) {
+    if (x == 0) return 0;
+    
+    uint256 z = (x + 1) / 2;
+    uint256 y = x;
+    
+    while (z < y) {
+        y = z;
+        z = (x / z + z) / 2;  // Babylonian method
+    }
+    
+    return y;
+}
+                    </div>
+
+                    <h3>Precision Management</h3>
+                    <div class="info-item">
+                        <span class="info-label">Intermediate Precision:</span>
+                        <span class="info-value">18 decimals (1e18) for calculations</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Final Format:</span>
+                        <span class="info-value">X96 format (2^96 scaling factor)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Scaling Adjustment:</span>
+                        <span class="info-value">Divide by 1e9 during X96 conversion</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Overflow Protection:</span>
+                        <span class="info-value">Safe casting to uint160 for sqrtPriceX96</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Usage Examples</h2>
+                    <h3>Create B0x/0xBTC Pool</h3>
+                    <div class="code-block2">
+// Deploy pool creator with B0x token address
+UniswapV4PoolCreator creator = new UniswapV4PoolCreator(b0xTokenAddress);
+
+// Create pool with hook contract
+address hookAddress = 0x1234...; // Or address(0) for no hooks
+creator.createNewPool(
+    b0xTokenAddress,
+    zeroXBTCAddress,
+    hookAddress
+);
+
+// Pool automatically gets 20:1 B0x ratio pricing
+                    </div>
+
+                    <h3>Debug Price Calculation</h3>
+                    <div class="code-block2">
+// Get detailed price breakdown
+(
+    address token0,
+    address token1,
+    uint8 decimals0,
+    uint8 decimals1,
+    uint256 calculatedPriceRatio,
+    string memory explanation
+) = creator.debugDecimalAdjustedPrice(tokenA, tokenB);
+
+// Check calculation steps
+(
+    string memory scenario,
+    uint256 numerator,
+    uint256 denominator,
+    uint256 priceRatio,
+    uint256 expectedSqrtPriceX96
+) = creator.debugPriceCalculation(tokenA, tokenB);
+                    </div>
+
+                    <h3>Manual Price Conversion</h3>
+                    <div class="code-block2">
+// Convert custom price ratio to X96 format
+uint256 customRatio = 50 * 1e18; // 50:1 ratio in 18-decimal
+uint160 sqrtPriceX96 = creator.sqrtPriceX96FromPriceRatio(customRatio);
+
+// Get dynamic fee flag
+uint24 dynamicFee = creator.encodeDynamicFee(); // Returns 0x800000
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Events and Errors</h2>
+                    <h3>Events</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">event PoolCreated(address indexed token0, address indexed token1, address indexed hookContract, uint160 sqrtPriceX96)</span><br>
+                            Emitted when a new pool is successfully created with pricing information
+                        </div>
+                    </div>
+
+                    <h3>Custom Errors</h3>
+                    <div class="function-list">
+                        <div class="function-item">
+                            <span class="function-name">error InvalidTokenAddress()</span><br>
+                            Thrown when token address validation fails
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">error InvalidHookContract()</span><br>
+                            Thrown when hook contract validation fails
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">error IdenticalTokens()</span><br>
+                            Thrown when both token addresses are the same
+                        </div>
+                        <div class="function-item">
+                            <span class="function-name">error ZeroAddress()</span><br>
+                            Thrown when zero address is provided for tokens or B0x
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Integration Examples</h2>
+                    <h3>Different Decimal Scenarios</h3>
+                    <div class="code-block2">
+// Scenario 1: B0x (18 decimals) + USDC (6 decimals)
+// If B0x < USDC (token0 = B0x, token1 = USDC)
+// Price = USDC/B0x = 0.05
+// numerator = 10^6 * 1e18 = 1e24
+// denominator = 20 * 10^18 = 2e19
+// priceRatio = 1e24 / 2e19 = 50000000000000000 (0.05 in 18-decimal)
+
+// Scenario 2: WETH (18 decimals) + B0x (18 decimals)  
+// If WETH < B0x (token0 = WETH, token1 = B0x)
+// Price = B0x/WETH = 20
+// numerator = 20 * 10^18 * 1e18 = 2e37
+// denominator = 1 * 10^18 = 1e18
+// priceRatio = 2e37 / 1e18 = 2e19 (20 in 18-decimal)
+                    </div>
+
+                    <h3>Hook Integration Pattern</h3>
+                    <div class="code-block2">
+// 1. Deploy hook miner and find valid hook address
+HookMiner miner = new HookMiner();
+(uint256 salt, address hookAddress) = miner.findValidSalt(0, 50000);
+address deployedHook = miner.deployHook(salt);
+
+// 2. Deploy pool creator
+UniswapV4PoolCreator creator = new UniswapV4PoolCreator(b0xAddress);
+
+// 3. Create pool with hook
+creator.createNewPool(b0xAddress, otherTokenAddress, deployedHook);
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Security Model</h2>
+                    <ul class="feature-list">
+                        <li><strong>Input Validation:</strong> Comprehensive checks for zero addresses and identical tokens</li>
+                        <li><strong>Immutable References:</strong> Pool Manager and B0x token addresses set during deployment</li>
+                        <li><strong>Mathematical Safety:</strong> Overflow protection in price calculations</li>
+                        <li><strong>Token Sorting:</strong> Automatic sorting prevents invalid pool creation</li>
+                        <li><strong>Decimal Handling:</strong> Proper decimal adjustment prevents precision errors</li>
+                        <li><strong>Standard Compliance:</strong> Follows Uniswap V4 pool creation specifications</li>
+                        <li><strong>Debug Functions:</strong> View-only functions for price verification</li>
                     </ul>
 
-                    <h3>Pool Configuration</h3>
-                    <ul>
-                        <li><strong>Fee Tiers:</strong> 0.01%, 0.05%, 0.30%, 1.00%</li>
-                        <li><strong>Tick Spacing:</strong> 1, 10, 60, 200</li>
-                        <li><strong>Hook Integration:</strong> Automatic B Zero X hook attachment</li>
-                    </ul>
+                    <h3>Deployment Considerations</h3>
+                    <div class="info-item">
+                        <span class="info-label">Network Verification:</span>
+                        <span class="info-value">Pool Manager address must match target network</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">B0x Token Setup:</span>
+                        <span class="info-value">B0x address is immutable after deployment</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hook Compatibility:</span>
+                        <span class="info-value">Supports any valid hook contract or no hooks</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Price Model:</span>
+                        <span class="info-value">20:1 ratio hardcoded, cannot be modified</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3735,7 +4657,7 @@ function mulDiv(uint256 a, uint256 b, uint256 denominator)
                     </p>
 
                     <h3>Technical Implementation</h3>
-                    <div class="code-block">
+                    <div class="code-block2">
 contract B0x_Mainnet {
    	function depositFromV1toV2(uint amount) public {
 		require(ERC20(_0xBitcoin_Address).transferFrom(msg.sender, address(this), amount), "Must transfer 0xBitcoin");
