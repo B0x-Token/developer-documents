@@ -951,8 +951,8 @@ body {
                 <span class="expand-icon">▶</span>
             </button>
             <div class="nav-submenu">
-                <a class="nav-subitem" onclick="showPage('uniswap-v4-staking')">Uniswap v4 Staking Pool</a>
                 <a class="nav-subitem" onclick="showPage('proof-of-work')">Proof of Work Contract</a>
+                <a class="nav-subitem" onclick="showPage('uniswap-v4-staking')">Uniswap v4 Staking Pool</a>
                 <a class="nav-subitem" onclick="showPage('hook-address')">Hook Address</a>
                 <a class="nav-subitem" onclick="showPage('hook-miner')">Hook Miner</a>
                 <a class="nav-subitem" onclick="showPage('conversion')">B0x ↔ 0xBitcoin Conversion</a>
@@ -1030,7 +1030,8 @@ body {
                     <ul>
                         <li><strong>Proof-of-Work Mining:</strong> Mine B0x tokens using computational power, ensuring fair distribution</li>
                         <li><strong>Uniswap v4 Integration:</strong> Advanced hooks for optimized liquidity provisioning</li>
-                        <li><strong>Token Bridging:</strong> Seamless conversion between B0x and 0xBitcoin</li>
+                        <li><strong>Token Conversion:</strong> Seamless conversion between B0x and 0xBitcoin</li>
+                        <li><strong>Token Bridging:</strong> Use Ethereum or Base Blockchain and bridge between them</li>
                         <li><strong>Staking Rewards:</strong> Earn continuous rewards through liquidity provision</li>
                         <li><strong>Permissionless Access:</strong> No gatekeepers, fully decentralized protocol</li>
                     </ul>
@@ -1062,7 +1063,7 @@ body {
                 <div class="feature-card">
                     <div class="feature-title">Token Conversion</div>
                     <div class="feature-description">
-                        Seamlessly convert between B0x and 0xBitcoin tokens with minimal slippage and competitive fees.
+                        Seamlessly convert between B0x and 0xBitcoin tokens with a never ending 100% reverseable and option conversion!
                     </div>
                 </div>
 
@@ -1146,7 +1147,7 @@ body {
             <div class="content-header">
                 <h1 class="content-title">Mainnet Deployments</h1>
                 <p class="content-description">
-                    Production smart contract addresses and deployment details for the Ethereum mainnet.
+                   COMING SOON! Production smart contract addresses and deployment details for the Ethereum mainnet.
                 </p>
             </div>
 
@@ -1156,56 +1157,100 @@ body {
                     <div class="contract-card">
                         <div class="contract-name">B0x Token</div>
                         <div class="contract-description">Main B0x ERC-20 token contract</div>
-                        <div class="contract-address">0x1234567890123456789012345678901234567890</div>
+                        <div class="contract-address">0x0123123123213</div>
                     </div>
                     
                     <div class="contract-card">
                         <div class="contract-name">B0x Mining Contract</div>
                         <div class="contract-description">Proof-of-work mining implementation</div>
-                        <div class="contract-address">0x2345678901234567890123456789012345678901</div>
+                        <div class="contract-address">0x0123123123213</div>
                     </div>
                     
                     <div class="contract-card">
                         <div class="contract-name">LP Rewards Pool</div>
                         <div class="contract-description">Liquidity provider reward distribution</div>
-                        <div class="contract-address">0x3456789012345678901234567890123456789012</div>
+                        <div class="contract-address">0x0123123123213</div>
                     </div>
                     
                     <div class="contract-card">
                         <div class="contract-name">Uniswap v4 Hook</div>
                         <div class="contract-description">Custom hook for enhanced functionality</div>
-                        <div class="contract-address">0x4567890123456789012345678901234567890123</div>
+                        <div class="contract-address">0x0123123123213</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Testnet Deployments Page -->
-        <div class="content-page" id="testnet">
-            <div class="content-header">
-                <h1 class="content-title">Testnet Deployments</h1>
-                <p class="content-description">
-                    Test network contract addresses for development and testing purposes.
-                </p>
-            </div>
+        <!-- Testnet Deployments Page --><!-- Testnet Deployments Page -->
+<div class="content-page" id="testnet">
+  <div class="content-header">
+    <h1 class="content-title">Testnet Deployments</h1>
+    <p class="content-description">
+      Test network contract addresses for development and testing purposes.
+    </p>
+  </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Sepolia Testnet</h2>
-                <div class="contract-grid">
-                    <div class="contract-card">
-                        <div class="contract-name">B0x Token (Testnet)</div>
-                        <div class="contract-description">Test version of B0x token</div>
-                        <div class="contract-address">0x5678901234567890123456789012345678901234</div>
-                    </div>
-                    
-                    <div class="contract-card">
-                        <div class="contract-name">B0x Mining (Testnet)</div>
-                        <div class="contract-description">Test mining contract with reduced difficulty</div>
-                        <div class="contract-address">0x6789012345678901234567890123456789012345</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Base Sepolia Testnet -->
+  <div class="content-section">
+    <h2 class="section-title">Base Sepolia Testnet</h2>
+    <div class="contract-grid">
+
+      <div class="contract-card">
+        <div class="contract-name">B0x Token</div>
+        <div class="contract-description">B0x on Base Sepolia Testnet</div>
+        <div class="contract-address">0xb379A851AC41bcDF0c2564b88916B10E5A08daAe</div>
+        <a href="https://sepolia.basescan.org/address/0xb379A851AC41bcDF0c2564b88916B10E5A08daAe" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">0xBitcoin Token</div>
+        <div class="contract-description">0xBTC on Base Sepolia Testnet</div>
+        <div class="contract-address">0x4b20b6e9b678b111Dcc365EaD92b3277B178FB74</div>
+        <a href="https://sepolia.basescan.org/address/0x4b20b6e9b678b111Dcc365EaD92b3277B178FB74" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">Proof of Work / Mining</div>
+        <div class="contract-description">Mining Address on Base Sepolia Testnet</div>
+        <div class="contract-address">0x925C42A57328FD8a7b07ecA444A34963e07C8999</div>
+        <a href="https://sepolia.basescan.org/address/0x925C42A57328FD8a7b07ecA444A34963e07C8999" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">B0x Token Uniswap LP Staking</div>
+        <div class="contract-description">Liquidity Pool Staking Contract on Base Sepolia</div>
+        <div class="contract-address">0x3eA249809f032b1F5AE7B1Dd4986490d05eE2dC2</div>
+        <a href="https://sepolia.basescan.org/address/0x3eA249809f032b1F5AE7B1Dd4986490d05eE2dC2" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">B0x Uniswap Router</div>
+        <div class="contract-description">Router on Base Sepolia Testnet</div>
+        <div class="contract-address">0xc728AF6267315b5CB7669D7DC4F87f5174adabE8</div>
+        <a href="https://sepolia.basescan.org/address/0xc728AF6267315b5CB7669D7DC4F87f5174adabE8" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">Hook Address for Uniswap</div>
+        <div class="contract-description">Hook for Uniswap on Base Sepolia</div>
+        <div class="contract-address">0x794B1409ef4b40a90eC8AF62EaF4c8bf275e5000</div>
+        <a href="https://sepolia.basescan.org/address/0x794B1409ef4b40a90eC8AF62EaF4c8bf275e5000" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+      <div class="contract-card">
+        <div class="contract-name">RightsTo0xBitcoin Token</div>
+
+        <div class="contract-description">RightsTo0xBTC on Base Sepolia Testnet</div>
+        <div class="contract-address">0x4A437511e57f69507386B5866D48668884F63cbB</div>
+        <a href="https://sepolia.basescan.org/address/0x4A437511e57f69507386B5866D48668884F63cbB" target="_blank" class="link">🔍 View on BaseScan</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
 
         <!-- Mining Guide Page -->
         <!-- Mining Guide Page -->
@@ -1393,39 +1438,284 @@ body {
         </div>
 
 
-        <!-- Contract Reference Pages -->
-        <div class="content-page" id="b0x-lp-rewards">
-            <div class="content-header">
-                <h1 class="content-title">B0x_LP_Rewards Contract</h1>
-                <p class="content-description">
-                    Liquidity provider reward distribution contract for B0x ecosystem participants.
-                </p>
+
+
+<div class="content-page" id="b0x-lp-rewards">
+    <div class="content-header">
+        <h1>🏆 B0x LP Rewards Contract</h1>
+        <p>Uniswap V4 NFT Position Staking with Multi-Token Rewards System</p>
+    </div>
+
+    <div class="launch-info">
+        <h3>🎯 Contract Overview</h3>
+        <div class="info-item">
+            <span class="info-label">Purpose:</span>
+            <span class="info-value">Stake Uniswap V4 LP NFTs to earn multi-token rewards</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Supported Pairs:</span>
+            <span class="info-value">B0x/0xBitcoin Full-Range Positions Only</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Timelock System:</span>
+            <span class="info-value">Withdrawal penalties from 20% to 3% over 15 days</span>
+        </div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ MAINNET DEPLOYMENT NOTES</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Update addressWETH for each chain deployment</li>
+            <li>Update zeroXBTC address for each chain</li>
+            <li>Update addressUSDC for target chain</li>
+            <li>Update stateView contract address</li>
+            <li>Update uniswapv4PositionManager address</li>
+            <li>Remove maxTime logic and constraints</li>
+            <li>Set owner to cold storage address</li>
+            <li>Set duration_of_rewards to 45 days</li>
+        </ul>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>📋 Contract Details</h2>
+            <div class="info-item">
+                <span class="info-label">Contract Type:</span>
+                <span class="info-value">Uniswap V4 NFT Position Staking</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Network:</span>
+                <span class="network-badge">Base Sepolia Testnet</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Position Manager:</span>
+                <span class="info-value">
+                    <div class="address">0x4B2C77d209D3405F41a037Ec6c77F7F5b8e2ca80</div>
+                </span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">State View:</span>
+                <span class="info-value">
+                    <div class="address">0x571291b572ed32ce6751a2Cb2486EbEe8DEfB9B4</div>
+                </span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Permit2:</span>
+                <span class="info-value">
+                    <div class="address">0x000000000022D473030F116dDEE9F6B43aC78BA3</div>
+                </span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎮 Core Staking Functions</h2>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">stakeUniswapV3NFT(uint256 tokenId)</span><br>
+                    Stakes a Uniswap V4 NFT position for rewards
+                </div>
+                <div class="function-item">
+                    <span class="function-name">stakeFORUniswapV3NFT(address forWhom, uint256 tokenId)</span><br>
+                    Stakes NFT position for another address
+                </div>
+                <div class="function-item">
+                    <span class="function-name">withdraw(uint tokenId)</span><br>
+                    Withdraws staked NFT with timelock penalties
+                </div>
+                <div class="function-item">
+                    <span class="function-name">exit(uint256 startIndex, uint256 count)</span><br>
+                    Exits multiple positions and claims rewards
+                </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x1234567890123456789012345678901234567890</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
-
-                    <h3>Main Functions</h3>
-                    <ul>
-                        <li><code>stake(uint256 amount)</code> - Stake LP tokens to earn rewards</li>
-                        <li><code>unstake(uint256 amount)</code> - Unstake LP tokens</li>
-                        <li><code>claimRewards()</code> - Claim accumulated rewards</li>
-                        <li><code>getRewardRate()</code> - Get current reward rate</li>
-                        <li><code>balanceOf(address user)</code> - Get user's staked balance</li>
-                    </ul>
-
-                    <h3>Events</h3>
-                    <ul>
-                        <li><code>Staked(address user, uint256 amount)</code></li>
-                        <li><code>Unstaked(address user, uint256 amount)</code></li>
-                        <li><code>RewardClaimed(address user, uint256 amount)</code></li>
-                    </ul>
+            <h3>Position Management</h3>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">increaseLiquidityOfPosition(...)</span><br>
+                    Adds liquidity to existing staked position
+                </div>
+                <div class="function-item">
+                    <span class="function-name">decreaseLiquidityOfPosition(...)</span><br>
+                    Removes liquidity with timelock penalties
+                </div>
+                <div class="function-item">
+                    <span class="function-name">collectFeesForNFT(uint tokenID)</span><br>
+                    Collects trading fees from position
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            <h2>🏅 Reward System</h2>
+            <div class="economics-section">
+                <h3>Multi-Token Rewards</h3>
+                <div class="supply-breakdown">
+                    <div class="supply-item">
+                        <strong>B0x Tokens</strong><br>
+                        Main reward token from mining<br>
+                        <em>1:1 ratio with mining distribution</em>
+                    </div>
+                    <div class="supply-item">
+                        <strong>0xBitcoin</strong><br>
+                        Secondary reward token<br>
+                        <em>From LP Fees</em>
+                    </div>
+                    <div class="supply-item">
+                        <strong>WETH</strong><br>
+                        B0x Mining fee rewards<br>
+                        <em>1:1 ratio with mining distribution</em>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Reward Distribution</h3>
+            <div class="info-item">
+                <span class="info-label">Distribution Period:</span>
+                <span class="info-value">5 minutes (60*5 seconds)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Reward Rate:</span>
+                <span class="info-value">40% of available balance per period</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">USDC Special:</span>
+                <span class="info-value">Tiered distribution: 1.25% → 3.75% over time</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⏰ Timelock & Penalties</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">20%</div>
+                    <div class="stat-label">Initial Penalty</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3%</div>
+                    <div class="stat-label">Final Penalty (15 days)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1%</div>
+                    <div class="stat-label">Long-term (150+ days)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Full Range</div>
+                    <div class="stat-label">Required Position Type</div>
+                </div>
+            </div>
+            
+            <h3>Penalty Schedule</h3>
+            <div class="info-item">
+                <span class="info-label">0-15 days:</span>
+                <span class="info-value">Linear decrease from 20% to 3%</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">15-30 days:</span>
+                <span class="info-value">2% penalty</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">30-45 days:</span>
+                <span class="info-value">1.5% penalty</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">45+ days:</span>
+                <span class="info-value">1% penalty (minimum)</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔧 Advanced Features</h2>
+            <ul class="feature-list">
+                <li><strong>NFT Position Tracking:</strong> Maps token IDs to sequential positions</li>
+                <li><strong>Liquidity Management:</strong> Increase/decrease without unstaking</li>
+                <li><strong>Fee Collection:</strong> Automatic fee harvest to contract</li>
+                <li><strong>Multi-Token Support:</strong> Add custom reward tokens (USDC fee)</li>
+                <li><strong>Slippage Protection:</strong> Built-in price movement protection</li>
+                <li><strong>Timelock Reset:</strong> Adding liquidity resets withdrawal timer</li>
+                <li><strong>Batch Operations:</strong> Exit multiple positions at once</li>
+                <li><strong>ETH Conversion:</strong> Automatic ETH to WETH conversion</li>
+            </ul>
+
+            <h3>Position Requirements</h3>
+            <div class="info-item">
+                <span class="info-label">Tick Range:</span>
+                <span class="info-value">-887220 to +887220 (Full Range)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Tick Spacing:</span>
+                <span class="info-value">60 (required)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Hook Address:</span>
+                <span class="info-value">Must match HookAddress_Important</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Currency Pair:</span>
+                <span class="info-value">B0x/0xBitcoin only</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔍 View Functions</h2>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">getRewardOwedStats()</span><br>
+                    Complete reward overview with token metadata
+                </div>
+                <div class="function-item">
+                    <span class="function-name">getMaxRedeemableTokens(uint tokenID, address owner)</span><br>
+                    Calculate max withdrawable amounts with penalties
+                </div>
+                <div class="function-item">
+                    <span class="function-name">getCurrentMultiplierTimelock(uint TokenID, address owner)</span><br>
+                    Get current penalty multiplier
+                </div>
+                <div class="function-item">
+                    <span class="function-name">getContractTotals()</span><br>
+                    Total liquidity and token amounts staked
+                </div>
+                <div class="function-item">
+                    <span class="function-name">getPriceRatio()</span><br>
+                    Current B0x/0xBitcoin price ratio
+                </div>
+                <div class="function-item">
+                    <span class="function-name">getStakedTokenIds(address user, uint start, uint count)</span><br>
+                    Get user's staked NFT token IDs
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ Configuration Functions</h2>
+            <h3>Reward Management (Owner)</h3>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">addRewardToken(IERC20 token)</span><br>
+                    Add new reward token (USDC fee for non-owners)
+                </div>
+                <div class="function-item">
+                    <span class="function-name">removeRewardToken(IERC20 token)</span><br>
+                    Remove reward token (protected core tokens)
+                </div>
+                <div class="function-item">
+                    <span class="function-name">setRewardParams(IERC20 token)</span><br>
+                    Configure reward distribution parameters
+                </div>
+                <div class="function-item">
+                    <span class="function-name">setPOW_Contract(address pow)</span><br>
+                    Set PoW contract (one-time, 120-day window)
+                </div>
+            </div>
+
+            <h3>Protected Core Tokens</h3>
+            <div class="info-item">
+                <span class="info-label">Cannot Remove:</span>
+                <span class="info-value">WETH, 0xBTC, B0x, USDC</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 
  <div class="content-page" id="how-to-stake">
         <div class="content-header">
@@ -1974,111 +2264,894 @@ Examples:
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+</div>
+     <div class="content-page" id="b0x-mainnet">
+    <div class="content-header">
+        <h1>🏛️ B0x Mainnet Contract</h1>
+        <p>Main B0x ERC-20 Token with 0xBitcoin Conversion System on Ethereum</p>
+    </div>
 
-        <div class="content-page" id="b0x-mainnet">
-            <div class="content-header">
-                <h1 class="content-title">B0x_Mainnet Contract</h1>
-                <p class="content-description">
-                    Main B0x ERC-20 token contract with additional functionality.
-                </p>
+    <div class="launch-info">
+        <h3>🎯 Contract Overview</h3>
+        <div class="info-item">
+            <span class="info-label">Purpose:</span>
+            <span class="info-value">Main B0x token with bidirectional 0xBitcoin conversion</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Network:</span>
+            <span class="info-value">Ethereum Mainnet (Security & Stability)</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Conversion Rate:</span>
+            <span class="info-value">1 0xBTC ↔ 1 B0x + 1 R0xBTC</span>
+        </div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ MAINNET DEPLOYMENT NOTES</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>MUST REMOVE getFaucetTokens_Testnet() function before launch</li>
+            <li>Hard code 0xBitcoin address for mainnet deployment</li>
+            <li>Update token name from "B ZERO X Test" to "B ZERO X"</li>
+            <li>Update symbol from "tB0x" to "B0x"</li>
+            <li>Remove test minting (1000 tokens for LP setup)</li>
+            <li>Verify 0xBitcoin address: 0xB6eD7644C69416d67B522e20bC294A9a9B405B31</li>
+        </ul>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>📋 Token Information</h2>
+            <div class="info-item">
+                <span class="info-label">Token Name:</span>
+                <span class="info-value">B ZERO X (Test: "B ZERO X Test")</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Symbol:</span>
+                <span class="info-value">B0x (Test: "tB0x")</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Decimals:</span>
+                <span class="info-value">18 (vs 0xBTC's 8 decimals)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Total Supply:</span>
+                <span class="info-value">31,175,100 B0x maximum</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Initial Mint:</span>
+                <span class="info-value">20,338,200 B0x (2 × 10,164,100 + 10,000 test)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">0xBitcoin Address:</span>
+                <span class="info-value">
+                    <div class="address">0xB6eD7644C69416d67B522e20bC294A9a9B405B31</div>
+                </span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔄 Conversion System</h2>
+            <div class="economics-section">
+                <h3>Bidirectional 0xBitcoin ↔ B0x Conversion</h3>
+                <div class="supply-breakdown">
+                    <div class="supply-item">
+                        <strong>Deposit (V1→V2)</strong><br>
+                        1 0xBTC → 1 B0x + 1 R0xBTC<br>
+                        <em>depositFromV1toV2() function</em>
+                    </div>
+                    <div class="supply-item">
+                        <strong>Withdraw (V2→V1)</strong><br>
+                        1 B0x + 1 R0xBTC → 1 0xBTC<br>
+                        <em>withdrawFromV2toV1() function</em>
+                    </div>
+                    <div class="supply-item">
+                        <strong>Approval-Free</strong><br>
+                        receiveApproval() integration<br>
+                        <em>Direct 0xBTC → B0x conversion</em>
+                    </div>
+                </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x1234567890123456789012345678901234567890</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
+            <h3>Rights Token System</h3>
+            <div class="info-item">
+                <span class="info-label">R0xBTC Contract:</span>
+                <span class="info-value">Auto-deployed child contract</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Purpose:</span>
+                <span class="info-value">Required for 0xBitcoin conversion back</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Supply:</span>
+                <span class="info-value">10,835,900 R0xBTC (matches 0xBTC supply)</span>
+            </div>
+        </div>
 
-                    <h3>Token Information</h3>
-                    <ul>
-                        <li><strong>Name:</strong> B Zero X</li>
-                        <li><strong>Symbol:</strong> B0x</li>
-                        <li><strong>Decimals:</strong> 8</li>
-                        <li><strong>Total Supply:</strong> 21,000,000 B0x (max)</li>
-                    </ul>
+        <div class="card">
+            <h2>🎮 Core Functions</h2>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">depositFromV1toV2(uint amount)</span><br>
+                    Convert 0xBitcoin to B0x + R0xBTC tokens
+                </div>
+                <div class="function-item">
+                    <span class="function-name">withdrawFromV2toV1(uint amountOf_0xBTC_ToReceive)</span><br>
+                    Convert B0x + R0xBTC back to 0xBitcoin
+                </div>
+                <div class="function-item">
+                    <span class="function-name">receiveApproval(address from, uint256 tokens, address token, bytes data)</span><br>
+                    Approval-free conversion from 0xBitcoin
+                </div>
+                <div class="function-item">
+                    <span class="function-name">getFaucetTokens_Testnet()</span><br>
+                    🚨 TESTNET ONLY - Must remove for mainnet
+                </div>
+            </div>
 
-                    <h3>Standard ERC-20 Functions</h3>
-                    <ul>
-                        <li><code>transfer(address to, uint256 amount)</code></li>
-                        <li><code>approve(address spender, uint256 amount)</code></li>
-                        <li><code>transferFrom(address from, address to, uint256 amount)</code></li>
-                        <li><code>balanceOf(address account)</code></li>
-                        <li><code>allowance(address owner, address spender)</code></li>
-                    </ul>
-
-                    <h3>Extended Functions</h3>
-                    <ul>
-                        <li><code>mint(address to, uint256 amount)</code> - Mint new tokens (mining only)</li>
-                        <li><code>burn(uint256 amount)</code> - Burn tokens</li>
-                        <li><code>getMiningContractAddress()</code> - Get authorized miner</li>
-                    </ul>
+            <h3>Standard ERC-20 + Permit</h3>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">permit(owner, spender, value, deadline, v, r, s)</span><br>
+                    Gasless approvals via EIP-2612 signatures
+                </div>
+                <div class="function-item">
+                    <span class="function-name">transfer, approve, transferFrom</span><br>
+                    Standard ERC-20 functions
+                </div>
+                <div class="function-item">
+                    <span class="function-name">increaseAllowance, decreaseAllowance</span><br>
+                    Safe approval adjustment functions
                 </div>
             </div>
         </div>
 
-        <div class="content-page" id="rights-token-contract">
-            <div class="content-header">
-                <h1 class="content-title">RightsTo0xBitcoinToken Contract</h1>
-                <p class="content-description">
-                    Rights token contract enabling conversion privileges to 0xBitcoin ecosystem.
-                </p>
+        <div class="card">
+            <h2>💰 Token Economics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">10,835,900</div>
+                    <div class="stat-label">Max 0xBTC Convertible</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10,164,100</div>
+                    <div class="stat-label">Mining Allocation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10,164,100</div>
+                    <div class="stat-label">LP Rewards Allocation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1:1</div>
+                    <div class="stat-label">Conversion Ratio</div>
+                </div>
+            </div>
+            
+            <h3>Supply Distribution</h3>
+            <div class="info-item">
+                <span class="info-label">0xBitcoin Conversion:</span>
+                <span class="info-value">10,835,900 B0x (available on-demand)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Mining Rewards:</span>
+                <span class="info-value">10,164,100 B0x (Base network PoW)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">LP Staking Rewards:</span>
+                <span class="info-value">10,164,100 B0x (1:1 with mining)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Test Tokens:</span>
+                <span class="info-value">10,000 B0x (remove for mainnet)</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔧 Technical Architecture</h2>
+            <ul class="feature-list">
+                <li><strong>ERC-20 Permit:</strong> Gasless approvals via signed messages</li>
+                <li><strong>Decimal Conversion:</strong> Auto-handles 8→18 decimal conversion</li>
+                <li><strong>Child Contract:</strong> Auto-deploys R0xBTC rights token</li>
+                <li><strong>Immutable References:</strong> 0xBTC and R0xBTC addresses locked</li>
+                <li><strong>Approval Integration:</strong> Works with 0xBTC's approveAndCall</li>
+                <li><strong>Burn/Mint Rights:</strong> R0xBTC managed by main contract</li>
+                <li><strong>No Ownership Transfer:</strong> Immutable owner for security</li>
+                <li><strong>Safe Math:</strong> OpenZeppelin's safe arithmetic operations</li>
+            </ul>
+
+            <h3>Decimal Handling</h3>
+            <div class="info-item">
+                <span class="info-label">0xBitcoin:</span>
+                <span class="info-value">8 decimals (Bitcoin standard)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">B0x & R0xBTC:</span>
+                <span class="info-value">18 decimals (Ethereum standard)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Conversion Factor:</span>
+                <span class="info-value">Multiply by 10^10 (0xBTC → B0x)</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔍 Contract Interfaces</h2>
+            <h3>IRightsTo0xBitcoin Interface</h3>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">withdrawToken(uint256 _amount, address _to)</span><br>
+                    Mint R0xBTC tokens to specified address
+                </div>
+                <div class="function-item">
+                    <span class="function-name">burnToken(uint256 _amount, address _from)</span><br>
+                    Burn R0xBTC tokens from specified address
+                </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x3456789012345678901234567890123456789012</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
+            <h3>Child Contract: RightsTo0xBitcoinToken</h3>
+            <div class="info-item">
+                <span class="info-label">Inheritance:</span>
+                <span class="info-value">ERC20Permit + Ownable3</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Owner:</span>
+                <span class="info-value">B0x_Mainnet contract (immutable)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Supply:</span>
+                <span class="info-value">10,835,900 R0xBTC maximum</span>
+            </div>
+        </div>
 
-                    <h3>Rights Functions</h3>
-                    <ul>
-                        <li><code>exerciseRights(uint256 amount)</code> - Exercise conversion rights</li>
-                        <li><code>getRightsBalance(address holder)</code> - Get rights balance</li>
-                        <li><code>getConversionRate()</code> - Get current conversion rate</li>
-                        <li><code>isRightsActive()</code> - Check if rights are active</li>
-                    </ul>
+        <div class="card">
+            <h2>⚙️ Usage Examples</h2>
+            <h3>Convert 0xBitcoin to B0x</h3>
+            <div class="code-block">
+// Approve B0x contract to spend your 0xBTC
+0xBTC.approve(b0xContract, amount);
 
-                    <h3>Conversion Mechanism</h3>
-                    <p>
-                        Rights tokens can be exercised to receive 0xBitcoin tokens at predetermined rates. 
-                        Rights may have time-based or condition-based activation requirements.
-                    </p>
+// Convert to B0x + R0xBTC
+b0xContract.depositFromV1toV2(amount);
+
+// Result: Receive amount*10^10 B0x + amount*10^10 R0xBTC
+            </div>
+
+            <h3>Convert Back to 0xBitcoin</h3>
+            <div class="code-block">
+// Must have both B0x and R0xBTC tokens
+// Specify amount in 0xBTC terms (8 decimals)
+b0xContract.withdrawFromV2toV1(amountOf0xBTC);
+
+// Contract burns your B0x + R0xBTC
+// Sends you 0xBTC tokens
+            </div>
+
+            <h3>Gasless Approval (Permit)</h3>
+            <div class="code-block">
+// Sign permit message off-chain
+// Submit permit + transfer in one transaction
+b0xContract.permit(owner, spender, value, deadline, v, r, s);
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛡️ Security Features</h2>
+            <ul class="feature-list">
+                <li><strong>Immutable Owner:</strong> No ownership transfer possible</li>
+                <li><strong>Validated Transfers:</strong> Require() statements for all transfers</li>
+                <li><strong>Address Validation:</strong> Checks for correct 0xBTC contract</li>
+                <li><strong>Decimal Safety:</strong> Proper conversion handling</li>
+                <li><strong>Child Contract Control:</strong> Only parent can mint/burn R0xBTC</li>
+                <li><strong>Standard Compliance:</strong> Full ERC-20 + EIP-2612 compliance</li>
+                <li><strong>No Reentrancy:</strong> Simple transfer patterns prevent attacks</li>
+                <li><strong>OpenZeppelin Base:</strong> Battle-tested contract foundations</li>
+            </ul>
+
+            <h3>Access Control</h3>
+            <div class="info-item">
+                <span class="info-label">Public Functions:</span>
+                <span class="info-value">Conversion, transfers, approvals</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Owner-Only (R0xBTC):</span>
+                <span class="info-value">withdrawToken(), burnToken()</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Immutable References:</span>
+                <span class="info-value">0xBTC address, R0xBTC address</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-page" id="rights-token-contract">
+    <div class="content-header">
+        <h1>🎫 RightsTo0xBitcoinToken Contract</h1>
+        <p>Rights Token for B0x ↔ 0xBitcoin Conversion System</p>
+    </div>
+
+    <div class="launch-info">
+        <h3>🎯 Contract Overview</h3>
+        <div class="info-item">
+            <span class="info-label">Purpose:</span>
+            <span class="info-value">Required token for converting B0x back to 0xBitcoin</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Deployment:</span>
+            <span class="info-value">Auto-deployed by B0x_Mainnet constructor</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Ownership:</span>
+            <span class="info-value">Controlled by B0x_Mainnet contract (immutable)</span>
+        </div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ IMPORTANT NOTES</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>This contract is auto-deployed by B0x_Mainnet constructor</li>
+            <li>Owner is immutable - set to B0x_Mainnet contract address</li>
+            <li>Only the parent B0x_Mainnet contract can mint/burn tokens</li>
+            <li>Users receive R0xBTC automatically when converting from 0xBitcoin</li>
+            <li>Both B0x AND R0xBTC required to convert back to 0xBitcoin</li>
+        </ul>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>📋 Token Information</h2>
+            <div class="info-item">
+                <span class="info-label">Token Name:</span>
+                <span class="info-value">Rights To 0xBitcoin Token</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Symbol:</span>
+                <span class="info-value">R0xBTC</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Decimals:</span>
+                <span class="info-value">18</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Total Supply:</span>
+                <span class="info-value">10,835,900 R0xBTC maximum</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Parent Contract:</span>
+                <span class="info-value">B0x_Mainnet (immutable owner)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Network:</span>
+                <span class="network-badge">Ethereum Mainnet</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎮 Core Functions</h2>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">withdrawToken(uint256 _amount, address _to) onlyOwner</span><br>
+                    Mint R0xBTC tokens to specified address
+                </div>
+                <div class="function-item">
+                    <span class="function-name">burnToken(uint256 _amount, address _from) onlyOwner</span><br>
+                    Burn R0xBTC tokens from specified address
+                </div>
+            </div>
+
+            <h3>Standard ERC-20 + Permit Functions</h3>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">transfer(address to, uint256 amount)</span><br>
+                    Standard token transfer
+                </div>
+                <div class="function-item">
+                    <span class="function-name">approve(address spender, uint256 amount)</span><br>
+                    Standard approval function
+                </div>
+                <div class="function-item">
+                    <span class="function-name">permit(owner, spender, value, deadline, v, r, s)</span><br>
+                    Gasless approvals via EIP-2612 signatures
+                </div>
+                <div class="function-item">
+                    <span class="function-name">balanceOf(address account)</span><br>
+                    Check R0xBTC balance
                 </div>
             </div>
         </div>
 
-        <div class="content-page" id="position-finder">
-            <div class="content-header">
-                <h1 class="content-title">positionFinderPro Contract</h1>
-                <p class="content-description">
-                    Advanced position analysis and optimization contract for liquidity providers.
-                </p>
+        <div class="card">
+            <h2>🔄 Conversion Mechanism</h2>
+            <div class="economics-section">
+                <h3>Rights Token Role in Conversion System</h3>
+                <div class="supply-breakdown">
+                    <div class="supply-item">
+                        <strong>Receive R0xBTC</strong><br>
+                        When converting 0xBTC → B0x<br>
+                        <em>1 0xBTC = 1 B0x + 1 R0xBTC</em>
+                    </div>
+                    <div class="supply-item">
+                        <strong>Spend R0xBTC</strong><br>
+                        When converting B0x → 0xBTC<br>
+                        <em>1 B0x + 1 R0xBTC = 1 0xBTC</em>
+                    </div>
+                    <div class="supply-item">
+                        <strong>Proof of Rights</strong><br>
+                        R0xBTC proves conversion rights<br>
+                        <em>Prevents infinite 0xBTC minting</em>
+                    </div>
+                </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Contract Details</h2>
-                <div class="section-content">
-                    <p><strong>Address:</strong> <span class="address">0x4567890123456789012345678901234567890123</span></p>
-                    <p><strong>Network:</strong> <span class="network-badge">Ethereum Mainnet</span></p>
+            <h3>Automatic Token Management</h3>
+            <div class="info-item">
+                <span class="info-label">Minting:</span>
+                <span class="info-value">Auto-minted when 0xBTC deposited to B0x_Mainnet</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Burning:</span>
+                <span class="info-value">Auto-burned when converting B0x back to 0xBTC</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Transfer:</span>
+                <span class="info-value">Freely transferable ERC-20 token</span>
+            </div>
+        </div>
 
-                    <h3>Analysis Functions</h3>
-                    <ul>
-                        <li><code>analyzePosition(address pool, int24 tickLower, int24 tickUpper)</code></li>
-                        <li><code>getOptimalRange(address pool, uint256 budget)</code></li>
-                        <li><code>calculateIL(address position)</code> - Calculate impermanent loss</li>
-                        <li><code>getYieldProjection(address position, uint256 timeframe)</code></li>
-                    </ul>
+        <div class="card">
+            <h2>⚡ Technical Architecture</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">ERC20Permit</div>
+                    <div class="stat-label">Inheritance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Ownable3</div>
+                    <div class="stat-label">Access Control</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Child</div>
+                    <div class="stat-label">Contract Type</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Immutable</div>
+                    <div class="stat-label">Owner Status</div>
+                </div>
+            </div>
+            
+            <h3>Contract Features</h3>
+            <ul class="feature-list">
+                <li><strong>Auto-Deployment:</strong> Created by B0x_Mainnet constructor</li>
+                <li><strong>Immutable Owner:</strong> Cannot transfer ownership (security)</li>
+                <li><strong>ERC-20 Compliant:</strong> Standard token functionality</li>
+                <li><strong>Permit Support:</strong> Gasless approvals via signatures</li>
+                <li><strong>Controlled Supply:</strong> Only parent contract can mint/burn</li>
+                <li><strong>Decimal Matching:</strong> 18 decimals like B0x token</li>
+                <li><strong>Interface Compliance:</strong> Implements IRightsTo0xBitcoin</li>
+            </ul>
+        </div>
 
-                    <h3>Optimization Features</h3>
-                    <ul>
-                        <li>Real-time position analysis</li>
-                        <li>Optimal range suggestions</li>
-                        <li>IL risk assessment</li>
-                        <li>Yield optimization</li>
-                    </ul>
+        <div class="card">
+            <h2>🔧 Owner-Only Functions</h2>
+            <h3>withdrawToken() - Mint R0xBTC</h3>
+            <div class="code-block">
+function withdrawToken(uint256 _amount, address _to) external onlyOwner {
+    _mint(_to, _amount);
+}
+
+// Called by B0x_Mainnet when user deposits 0xBTC
+// Mints R0xBTC tokens to user's address
+            </div>
+
+            <h3>burnToken() - Burn R0xBTC</h3>
+            <div class="code-block">
+function burnToken(uint256 _amount, address _from) external onlyOwner {
+    _burn(_from, _amount);
+}
+
+// Called by B0x_Mainnet when user withdraws to 0xBTC
+// Burns R0xBTC tokens from user's address
+            </div>
+
+            <h3>Access Control</h3>
+            <div class="info-item">
+                <span class="info-label">Owner:</span>
+                <span class="info-value">B0x_Mainnet contract address (set in constructor)</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Immutable:</span>
+                <span class="info-value">No ownership transfer functions available</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔍 Usage Examples</h2>
+            <h3>How Users Interact</h3>
+            <div class="info-item">
+                <span class="info-label">Direct Interaction:</span>
+                <span class="info-value">Users rarely call R0xBTC functions directly</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Automatic Management:</span>
+                <span class="info-value">B0x_Mainnet handles all minting/burning</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Standard Operations:</span>
+                <span class="info-value">Users can transfer, approve, check balances</span>
+            </div>
+
+            <h3>Conversion Flow</h3>
+            <div class="code-block">
+// Step 1: User deposits 0xBTC to B0x_Mainnet
+b0xMainnet.depositFromV1toV2(amount);
+
+// Step 2: B0x_Mainnet calls (automatically):
+rightsContract.withdrawToken(amount * 10**10, userAddress);
+// Result: User receives B0x + R0xBTC
+
+// Step 3: User converts back (needs both tokens):
+b0xMainnet.withdrawFromV2toV1(amount);
+
+// Step 4: B0x_Mainnet calls (automatically):
+rightsContract.burnToken(amount * 10**10, userAddress);
+// Result: User receives 0xBTC, loses B0x + R0xBTC
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛡️ Security Model</h2>
+            <ul class="feature-list">
+                <li><strong>Controlled Access:</strong> Only B0x_Mainnet can mint/burn</li>
+                <li><strong>Immutable Owner:</strong> Prevents ownership takeover</li>
+                <li><strong>Supply Control:</strong> Cannot create tokens without backing 0xBTC</li>
+                <li><strong>Standard Security:</strong> OpenZeppelin battle-tested base</li>
+                <li><strong>No Admin Functions:</strong> Minimal attack surface</li>
+                <li><strong>Automatic Operations:</strong> Reduces human error risk</li>
+                <li><strong>Rights Verification:</strong> Prevents unauthorized 0xBTC withdrawal</li>
+            </ul>
+
+            <h3>Economic Security</h3>
+            <div class="info-item">
+                <span class="info-label">Backing Requirement:</span>
+                <span class="info-value">R0xBTC only minted when 0xBTC deposited</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Conversion Proof:</span>
+                <span class="info-value">Must burn R0xBTC to withdraw 0xBTC</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Supply Limit:</span>
+                <span class="info-value">Maximum 10,835,900 R0xBTC (matches 0xBTC supply)</span>
+            </div>
+        </div>   <div class="card">
+            <h2>📊 Interface Implementation</h2>
+            <h3>IRightsTo0xBitcoin Interface</h3>
+            <div class="function-list">
+                <div class="function-item">
+                    <span class="function-name">interface IRightsTo0xBitcoin</span><br>
+                    Defines the required functions for rights management
+                </div>
+            </div>
+
+            <h3>Inherited Contracts</h3>
+            <div class="info-item">
+                <span class="info-label">ERC20Permit:</span>
+                <span class="info-value">Standard token + gasless approvals</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Ownable3:</span>
+                <span class="info-value">Access control with immutable owner</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">EIP712:</span>
+                <span class="info-value">Structured data signing for permits</span>
+            </div>
+
+            <h3>Constructor Parameters</h3>
+            <div class="code-block">
+constructor() 
+    ERC20("Rights To 0xBitcoin Token", "R0xBTC", 18, 10_835_900 * 10**18) 
+    ERC20Permit("Rights To 0xBitcoin Token") 
+{
+    // Owner set to msg.sender (B0x_Mainnet contract)
+    // Total supply: 10,835,900 * 10^18
+    // No initial minting - tokens created on-demand
+}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <div class="content-page" id="position-finder">
+        <div class="content-header">
+            <h1>B0x Token Position Finder Pro</h1>
+            <p>Advanced utility contract for discovering and analyzing Uniswap V4 positions. Built for B0x Token ecosystem with comprehensive position finding and staking analysis capabilities.</p>
+        </div>
+
+        <div class="launch-info">
+            <h3>Contract Overview</h3>
+            <div class="info-item">
+                <span class="info-label">Purpose:</span>
+                <span class="info-value">Advanced position discovery and analysis for Uniswap V4</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Protocol:</span>
+                <span class="info-value">Uniswap V4 with B0x Token integration</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Features:</span>
+                <span class="info-value">Position finding, staking analysis, fee tracking</span>
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>IMPORTANT NOTES</strong>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Advanced contract for experienced DeFi users</li>
+                <li>Requires understanding of Uniswap V4 mechanics</li>
+                <li>Position Manager and State View integration required</li>
+                <li>Gas optimization through batch operations</li>
+                <li>Comprehensive fee tracking and liquidity analysis</li>
+            </ul>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Contract Information</h2>
+                <div class="info-item">
+                    <span class="info-label">Contract Name:</span>
+                    <span class="info-value">positionFinderPro</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Position Manager:</span>
+                    <span class="info-value">0x4B2C77d209D3405F41a037Ec6c77F7F5b8e2ca80</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">State View:</span>
+                    <span class="info-value">0x571291b572ed32ce6751a2Cb2486EbEe8DEfB9B4</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Network:</span>
+                    <span class="network-badge">Ethereum Mainnet</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Protocol:</span>
+                    <span class="info-value">Uniswap V4</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Token:</span>
+                    <span class="info-value">B0x (31,165,100 total supply)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Core Functions</h2>
+                <div class="function-list">
+                    <div class="function-item">
+                        <span class="function-name">findUserTokenIds(address user, uint256 startId, uint256 endId, address Token0, address Token1, address HookAddress)</span><br>
+                        Finds all NFT positions owned by a user within specified token ID range for a specific pool
+                    </div>
+                    <div class="function-item">
+                        <span class="function-name">findUserTokenIdswithMinimum(address user, uint256 startId, uint256 endId, address Token0, address Token1, address HookAddress, uint minTokenA)</span><br>
+                        Filters user positions by minimum token amount threshold
+                    </div>
+                    <div class="function-item">
+                        <span class="function-name">findAllUsersTokenIDSinStaking(uint256 startId, uint256 endId, address Token0, address Token1, address HookAddress, uint minTokenA)</span><br>
+                        Discovers all staked NFT positions within token ID range that meet minimum requirements
+                    </div>
+                    <div class="function-item">
+                        <span class="function-name">getIDSofStakedTokensForUserwithMinimum(address user, address Token0, address Token1, uint256 minAmount0, uint256 startIndex, uint256 count, address HookAddress)</span><br>
+                        Retrieves user's staked positions with minimum token requirements
+                    </div>
+                </div>
+
+                <h3>Utility Functions</h3>
+                <div class="function-list">
+                    <div class="function-item">
+                        <span class="function-name">getMaxUniswapIDPossible()</span><br>
+                        Returns maximum possible Uniswap NFT ID
+                    </div>
+                    <div class="function-item">
+                        <span class="function-name">getMaxStakedIDforUser(address user)</span><br>
+                        Returns total number of staked positions for user
+                    </div>
+                    <div class="function-item">
+                        <span class="function-name">getAmount0ForLiquidity(uint160 sqrtPriceAX96, uint160 sqrtPriceBX96, uint128 liquidity)</span><br>
+                        Calculates token0 amount from liquidity
+                    </div>
+                    <div class="function-item">
+                        <span class="function-name">getAmount1ForLiquidity(uint160 sqrtPriceAX96, uint160 sqrtPriceBX96, uint128 liquidity)</span><br>
+                        Calculates token1 amount from liquidity
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Technical Architecture</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">Uniswap V4</div>
+                        <div class="stat-label">Protocol</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">Gas Optimized</div>
+                        <div class="stat-label">Efficiency</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">Batch Operations</div>
+                        <div class="stat-label">Query Type</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">Immutable Refs</div>
+                        <div class="stat-label">Contract Design</div>
+                    </div>
+                </div>
+                
+                <h3>Key Features</h3>
+                <ul class="feature-list">
+                    <li><strong>Position Discovery:</strong> Find user positions across token ID ranges</li>
+                    <li><strong>Liquidity Analysis:</strong> Calculate token amounts from liquidity positions</li>
+                    <li><strong>Fee Tracking:</strong> Monitor unclaimed fees and fee growth</li>
+                    <li><strong>Staking Integration:</strong> Full NFT staking contract integration</li>
+                    <li><strong>Mathematical Precision:</strong> Accurate tick to price conversions</li>
+                    <li><strong>Pool Identification:</strong> PoolKey hashing for unique identification</li>
+                    <li><strong>Batch Queries:</strong> Efficient multi-position data retrieval</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Staking Analysis</h2>
+                <h3>Staking Contract Integration</h3>
+                <div class="function-list">
+                    <div class="function-item">
+                        <span class="function-name">getStakedTokenIdsAllInfoRange(address user, uint256 startIndex, uint256 count)</span><br>
+                        Comprehensive staking information for position ranges
+                    </div>
+                </div>
+
+                <h3>Staking Features</h3>
+                <div class="info-item">
+                    <span class="info-label">Penalty Tracking:</span>
+                    <span class="info-value">Withdrawal penalties based on staking duration</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Position Ownership:</span>
+                    <span class="info-value">Track original owners of staked NFTs</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Batch Processing:</span>
+                    <span class="info-value">Efficient queries for multiple staked positions</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Time Analysis:</span>
+                    <span class="info-value">Staking timestamps and duration calculations</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Mathematical Functions</h2>
+                <h3>Price and Liquidity Calculations</h3>
+                <div class="code-block">
+// Tick to sqrt price conversion
+function getSqrtRatioAtTick(int24 tick) internal pure returns (uint160)
+
+// Liquidity to token amount conversions
+function getAmount0ForLiquidity(uint160 sqrtPriceAX96, uint160 sqrtPriceBX96, uint128 liquidity)
+function getAmount1ForLiquidity(uint160 sqrtPriceAX96, uint160 sqrtPriceBX96, uint128 liquidity)
+
+// Fee calculations
+function getFeesOwed(IStateView.PoolId poolId, uint256 tokenId)
+function mulDiv(uint256 a, uint256 b, uint256 denominator)
+                </div>
+
+                <h3>Constants and Precision</h3>
+                <div class="info-item">
+                    <span class="info-label">MIN_TICK:</span>
+                    <span class="info-value">-887220 (minimum price tick)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">MAX_TICK:</span>
+                    <span class="info-value">887220 (maximum price tick)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Q96:</span>
+                    <span class="info-value">2^96 (price calculation precision)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Q128:</span>
+                    <span class="info-value">2^128 (fee calculation precision)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Usage Examples</h2>
+                <h3>Finding User Positions</h3>
+                <div class="code-block">
+// Find all positions for user in token range
+(uint256[] memory tokenIds, 
+ uint256[] memory amountA, 
+ uint256[] memory amountB,
+ uint128[] memory liquidity,
+ int128[] memory feesA,
+ int128[] memory feesB,
+ PoolKey[] memory pools,
+ uint256[] memory info) = positionFinder.findUserTokenIds(
+    userAddress, 
+    startTokenId, 
+    endTokenId,
+    token0Address,
+    token1Address,
+    hooksAddress
+);
+                </div>
+
+                <h3>Filtering by Minimum Amount</h3>
+                <div class="code-block">
+// Find positions with minimum token A amount
+(uint256[] memory qualifyingTokens, ...) = 
+    positionFinder.findUserTokenIdswithMinimum(
+        userAddress,
+        startId,
+        endId,
+        token0,
+        token1,
+        hooks,
+        minimumTokenA
+    );
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Security Model</h2>
+                <ul class="feature-list">
+                    <li><strong>Immutable References:</strong> Position Manager and State View addresses fixed</li>
+                    <li><strong>Read-Only Operations:</strong> No state-changing functions for users</li>
+                    <li><strong>Gas Optimized:</strong> Efficient batch operations reduce transaction costs</li>
+                    <li><strong>Precision Math:</strong> Accurate calculations prevent rounding errors</li>
+                    <li><strong>Error Handling:</strong> Proper checks for non-existent tokens</li>
+                    <li><strong>Standard Integration:</strong> Compatible with Uniswap V4 interfaces</li>
+                    <li><strong>Owner Access:</strong> Limited admin functions with clear permissions</li>
+                </ul>
+
+                <h3>Integration Safety</h3>
+                <div class="info-item">
+                    <span class="info-label">Position Manager:</span>
+                    <span class="info-value">Trusted Uniswap V4 contract integration</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">State View:</span>
+                    <span class="info-value">Real-time pool data with safety checks</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Staking Contract:</span>
+                    <span class="info-value">Controlled access through interface</span>
                 </div>
             </div>
         </div>
+    </div>
+
+
+
+
+
+
 
         <div class="content-page" id="univ4-hook">
             <div class="content-header">
@@ -2174,73 +3247,100 @@ Examples:
             </div>
         </div>
 
-        <!-- Additional protocol design pages -->
-        <div class="content-page" id="hook-address">
-            <div class="content-header">
-                <h1 class="content-title">Hook Address</h1>
-                <p class="content-description">
-                    Understanding hook addresses and their role in the B Zero X protocol.
-                </p>
-            </div>
+<!-- HookMiner Protocol Page --><!-- HookMiner Protocol Page: Enhanced with Dynamic Fee Details -->
+<div class="content-page" id="hook-address">
+  <div class="content-header">
+    <h1 class="content-title">Hook Address & Dynamic Fee Flag</h1>
+    <p class="content-description">
+      Understanding hook addresses, dynamic fees, and their role in the HookMiner system.
+    </p>
+  </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Hook Address System</h2>
-                <div class="section-content">
-                    <p>
-                        Hook addresses in Uniswap v4 determine which hooks are called during pool operations. 
-                        B Zero X uses specific hook addresses to enable enhanced functionality.
-                    </p>
+  <div class="content-section">
+    <h2 class="section-title">Hook Address System</h2>
+    <div class="section-content">
+      <p>
+        Hook addresses in Uniswap V4 encode which lifecycle callbacks (hooks) a contract can engage with, using the lower 14 bits of the address. Additionally, pools can enable dynamic fee behavior via a special fee flag during initialization.
+      </p>
 
-                    <h3>Hook Address Format</h3>
-                    <p>Hook addresses encode hook permissions in their bits:</p>
-                    <ul>
-                        <li><strong>Bit 0:</strong> beforeInitialize</li>
-                        <li><strong>Bit 1:</strong> afterInitialize</li>
-                        <li><strong>Bit 2:</strong> beforeAddLiquidity</li>
-                        <li><strong>Bit 3:</strong> afterAddLiquidity</li>
-                        <li><strong>Bit 4:</strong> beforeRemoveLiquidity</li>
-                        <li><strong>Bit 5:</strong> afterRemoveLiquidity</li>
-                        <li><strong>Bit 6:</strong> beforeSwap</li>
-                        <li><strong>Bit 7:</strong> afterSwap</li>
-                    </ul>
+      <h3>Hook Address Format (Lower 14 Bits)</h3>
+      <ul>
+        <li><strong>Bit 13:</strong> beforeInitialize</li>
+        <li><strong>Bit 12:</strong> afterInitialize</li>
+        <li><strong>Bit 11:</strong> beforeAddLiquidity</li>
+        <li><strong>Bit 10:</strong> afterAddLiquidity</li>
+        <li><strong>Bit 9:</strong> beforeRemoveLiquidity</li>
+        <li><strong>Bit 8:</strong> afterRemoveLiquidity</li>
+        <li><strong>Bit 7:</strong> beforeSwap</li>
+        <li><strong>Bit 6:</strong> afterSwap</li>
+        <li><strong>Bit 5:</strong> beforeDonate</li>
+        <li><strong>Bit 4:</strong> afterDonate</li>
+        <li><strong>Bit 3:</strong> beforeSwapReturnsDelta</li>
+        <li><strong>Bit 2:</strong> afterSwapReturnsDelta</li>
+        <li><strong>Bit 1:</strong> afterAddLiquidityReturnsDelta</li>
+        <li><strong>Bit 0:</strong> afterRemoveLiquidityReturnsDelta</li>
+      </ul>
 
-                    <h3>B Zero X Hook Address</h3>
-                    <p><strong>Main Hook:</strong> <span class="address">0x8000000000000000000000000000000000000001</span></p>
-                    <p>This address enables beforeSwap and afterSwap hooks for reward distribution.</p>
-                </div>
-            </div>
-        </div>
+      <h3>HookMiner Desired Flags</h3>
+      <p>Only the <strong>afterInitialize</strong> flag is set:</p>
+      <ul>
+        <li><strong>Bit:</strong> 12</li>
+        <li><strong>Decimal:</strong> 4096</li>
+        <li><strong>Hex:</strong> 0x1000</li>
+      </ul>
+
+      <h3>Dynamic Fee Signal</h3>
+      <p>
+        Separately, our Pools can indicate support for <strong>dynamic fees</strong> by using a special fee flag at initialization:
+      </p>
+      <ul>
+        <li><strong>Fee Value:</strong> 8,388,608</li>
+        <li><strong>Hex:</strong> 0x800000</li>
+      </ul>
+      <p>
+        If the pool is initialized with this fee, it becomes a <em>dynamic fee</em> pool, irrespective of hook bits
+      </p>
+      <h3>Example Valid Hook Address</h3>
+      <p>
+        Example address containing only the afterInitialize flag:<br>
+        <strong>0x794B1409ef4b40a90eC8AF62EaF4c8bf275e5000</strong>
+      </p>
+      <p>
+        This address has only bit 12 set (0x1000), which matches our desired flag configuration.
+      </p>
+    </div>
+  </div>
+</div>
+
 
         <div class="content-page" id="hook-miner">
             <div class="content-header">
                 <h1 class="content-title">Hook Miner</h1>
                 <p class="content-description">
-                    Specialized mining mechanism that integrates with Uniswap v4 hooks.
+                    Specialized Uniswap V4 Hook Miner for B0x Token
                 </p>
             </div>
 
             <div class="content-section">
-                <h2 class="section-title">Hook Mining Concept</h2>
+                <h2 class="section-title">Hook Miner Concept</h2>
                 <div class="section-content">
                     <p>
-                        Hook mining combines traditional proof-of-work mining with liquidity provision rewards, 
-                        creating a unique incentive mechanism for both miners and liquidity providers.
+                        Hook mining combines salt and addresses to get the correct Uniswap v4 Hook created for our pool.
                     </p>
 
                     <h3>How It Works</h3>
                     <ul>
-                        <li>Miners submit proof-of-work solutions</li>
-                        <li>Successful miners trigger hook-based rewards</li>
-                        <li>Liquidity providers receive additional rewards</li>
-                        <li>Trading activity generates mining opportunities</li>
+                        <li>Setup the Hook Miner Contract to have the correct variables</li>
+                        <li>Find the valid salt of the Uniswap v4 Hook Address</li>
+                        <li>Deploy the contract with that Salt #</li>
+                        <li>Custom Uniswap V4 Hook is created and can be used with Uniswap v4 Pools!</li>
                     </ul>
 
                     <h3>Benefits</h3>
                     <ul>
-                        <li>Increased mining rewards</li>
-                        <li>Enhanced liquidity incentives</li>
+                        <li>Automatic Hook Maker</li>
+                        <li>Sets fee automatically on creaation</li>
                         <li>Synergy between mining and DeFi</li>
-                        <li>Sustainable reward distribution</li>
                     </ul>
                 </div>
             </div>
@@ -2264,18 +3364,21 @@ Examples:
 
                     <h3>Technical Implementation</h3>
                     <div class="code-block">
-contract BZeroXConverter {
-    function convertToOxBitcoin(uint256 amount) external {
-        require(bzeroX.transferFrom(msg.sender, address(this), amount));
-        oxBitcoin.transfer(msg.sender, amount);
-        emit Converted(msg.sender, amount, true);
-    }
+contract B0x_Mainnet {
+   	function depositFromV1toV2(uint amount) public {
+		require(ERC20(_0xBitcoin_Address).transferFrom(msg.sender, address(this), amount), "Must transfer 0xBitcoin");
+		IRightsTo0xBitcoin(_RightsTo0xBitcoin_Address).withdrawToken(amount * 10 ** 10, msg.sender);
+		_mint(msg.sender, amount * 10 ** 10);
+	}
     
-    function convertToBZeroX(uint256 amount) external {
-        require(oxBitcoin.transferFrom(msg.sender, address(this), amount));
-        bzeroX.transfer(msg.sender, amount);
-        emit Converted(msg.sender, amount, false);
-    }
+     function withdrawFromV2toV1(uint amountOf_0xBTC_ToRecieve) public {
+		IRightsTo0xBitcoin(_RightsTo0xBitcoin_Address).burnToken(amountOf_0xBTC_ToRecieve * 10**10, msg.sender);
+		_burn(msg.sender, amountOf_0xBTC_ToRecieve * 10 ** 10);
+        /// @notice Success status of the 0xBitcoin transfer
+        bool success = ERC20(_0xBitcoin_Address).transfer(msg.sender, amountOf_0xBTC_ToRecieve);
+    	require(success, "Transfer failed of 0xBTC out of contract");
+	}
+	
 }
                     </div>
 
@@ -2284,7 +3387,7 @@ contract BZeroXConverter {
                         <li><strong>1:1 Ratio:</strong> Fixed exchange rate</li>
                         <li><strong>Instant Conversion:</strong> No waiting periods</li>
                         <li><strong>Gas Optimized:</strong> Minimal transaction costs</li>
-                        <li><strong>Reversible:</strong> Convert back anytime</li>
+                        <li><strong>Reversible:</strong> Convert back anytime as long as you keep RightsTo0xBitconi Token and B0x Token or 0xBitcoin Token</li>
                     </ul>
                 </div>
             </div>
@@ -2294,7 +3397,7 @@ contract BZeroXConverter {
             <div class="content-header">
                 <h1 class="content-title">RightsTo0xBitcoin Token</h1>
                 <p class="content-description">
-                    Rights tokens that provide conversion privileges and governance participation.
+                    Rights tokens that provide conversion privileges between B0x and 0xBitcoin.
                 </p>
             </div>
 
@@ -2302,32 +3405,28 @@ contract BZeroXConverter {
                 <h2 class="section-title">Rights Token System</h2>
                 <div class="section-content">
                     <p>
-                        RightsTo0xBitcoin tokens represent conversion rights and governance privileges 
-                        within the B Zero X ecosystem, providing holders with special access and benefits.
+                        RightsTo0xBitcoin tokens represent conversion rights within the B Zero X ecosystem, 
+                        providing holders with special access and benefits.
                     </p>
 
                     <h3>Token Properties</h3>
                     <ul>
-                        <li><strong>Symbol:</strong> R0XB</li>
-                        <li><strong>Decimals:</strong> 8</li>
-                        <li><strong>Total Supply:</strong> Limited issuance</li>
+                        <li><strong>Symbol:</strong> R0xBTC</li>
+                        <li><strong>Decimals:</strong> 18</li>
+                        <li><strong>Total Supply:</strong> 10.9M</li>
                         <li><strong>Transferable:</strong> Yes</li>
                     </ul>
 
                     <h3>Rights and Benefits</h3>
                     <ul>
-                        <li>Priority conversion privileges</li>
-                        <li>Governance voting rights</li>
-                        <li>Early access to new features</li>
-                        <li>Reduced conversion fees</li>
-                        <li>Staking reward bonuses</li>
+                        <li>No Conversion fees</li>
+                        <li>Use B0x and 0xBitconi in Staking Liquidity Rewards</li>
                     </ul>
 
                     <h3>How to Obtain</h3>
                     <ul>
-                        <li>Early adopter rewards</li>
-                        <li>Long-term staking bonuses</li>
-                        <li>Community contributions</li>
+                        <li>Convert 0xBitcoin</li>
+                        <li>Buy them on Uniswap</li>
                         <li>Secondary market purchases</li>
                     </ul>
                 </div>
@@ -2353,11 +3452,10 @@ contract BZeroXConverter {
 
                     <h3>Token Details</h3>
                     <ul>
-                        <li><strong>Contract:</strong> <span class="address">0xB6eD7644C69416d67B522e20bC294A9a9B405B31</span></li>
                         <li><strong>Symbol:</strong> 0xBTC</li>
                         <li><strong>Decimals:</strong> 8</li>
-                        <li><strong>Max Supply:</strong> 21,000,000 0xBTC</li>
-                        <li><strong>Mining Algorithm:</strong> Keccak256</li>
+                        <li><strong>Max Supply:</strong> 10,900,000 0xBTC</li>
+                        <li><strong>Mining Algorithm:</strong> No Longer Mineable</li>
                     </ul>
 
                     <h3>Integration Benefits</h3>
@@ -2371,7 +3469,7 @@ contract BZeroXConverter {
                     <h3>Use Cases in B Zero X</h3>
                     <ul>
                         <li>Liquidity provision in 0xBTC/B0x pools</li>
-                        <li>Conversion to B0x for mining participation</li>
+                        <li>Conversion to B0x for staking participation</li>
                         <li>Staking for enhanced rewards</li>
                         <li>Cross-chain bridging opportunities</li>
                     </ul>
@@ -2684,7 +3782,10 @@ let currentPage = 'what-is-bzero-x';
             });
             
             // Find the nav item for this page and activate it
-            const navItems = document.querySelectorAll('.nav-subitem[onclick*="' + pageId + '"], .nav-header[onclick*="' + pageId + '"]');
+const navItems = document.querySelectorAll(
+  `.nav-subitem[onclick="openPage('${pageId}')"], 
+   .nav-header[onclick="openPage('${pageId}')"]`
+);
             navItems.forEach(item => {
                 item.classList.add('active');
                 
